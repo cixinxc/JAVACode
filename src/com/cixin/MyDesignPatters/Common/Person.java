@@ -1,4 +1,4 @@
-package com.cixin.Learning.Code.MyDesignPatters.Common;
+package com.cixin.MyDesignPatters.Common;
 
 public class Person {
 	String name;

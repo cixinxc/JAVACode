@@ -1,4 +1,4 @@
-package com.cixin.Learning.Code.MyDesignPatters.Singleton;
+package com.cixin.MyDesignPatters.Singleton;
 
 public class Singleton {
 	private static Singleton singleton = null;

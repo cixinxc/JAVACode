@@ -1,4 +1,4 @@
-package com.cixin.Learning.Code.MyDesignPatters.Singleton;
+package com.cixin.MyDesignPatters.Singleton;
 
 class MyThread implements Runnable {
 	private Singleton singleton = Singleton.getSingleton();
