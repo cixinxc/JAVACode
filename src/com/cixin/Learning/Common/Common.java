@@ -22,4 +22,21 @@ public class Common {
 		
 		return dataset;
 	}
+	//创建一个length长度的int数组:data，且data[index] = value;
+	public static int[] getSearchArray(int length, int index, int value) {
+		int[] data = new int[length];
+		for(int i = 0;i<length;i++) {
+			data[i] = (int)(Math.random()*100);
+		}
+		data[index] = value;
+		return data;
+	}
+	//创建一个有序数组
+	public static int[] getArray(int length) {
+		int[] data = new int[length];
+		for(int i = 0;i<length;i++) {
+			data[i] = i;
+		}
+		return data;
+	}
 }
