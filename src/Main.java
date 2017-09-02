@@ -71,8 +71,27 @@ public class Main {
     }
     */
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
-        Class clazz = Class.forName("com.cixin.EffectiveJava.Builder.Person");
-        Person a = (Person)clazz.newInstance();
+        //Class clazz = Class.forName("com.cixin.EffectiveJava.Builder.Person");
+        //Person a = (Person)clazz.newInstance();
+        System.out.print(solutions(""));
     }
+        public static String solutions (String str) {
+            int l = str.length();
+            StringBuffer sb = new StringBuffer();
+            for(int i = 0;i<l;) {
+                int j = i+1;
+                char cc = str.charAt(i);
+                for(;j<l;j++) {
+                    if(str.charAt(j)!=cc) {
+                        break;
+                    }
+                }
+                sb.append(""+(j-i));
+                sb.append(cc);
+                i = j;
+            }
+            return sb.toString();
+        }
+
 
 }
