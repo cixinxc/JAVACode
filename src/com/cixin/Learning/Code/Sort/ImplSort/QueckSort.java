@@ -45,19 +45,20 @@ public class QueckSort implements ISort {
             	while(low < high && this.ds[high].getValue() > key.getValue()){
             		high--;
             	}
-                    if(low < high)
-                    	this.ds[low++] = this.ds[high];
-                    while(low < high && this.ds[low].getValue() < key.getValue()){
-                            low++;
-                    }
-                    // 可能已经结束了, 赋值时候需要移位
-                    if(low < high)
-                    	this.ds[high--] = this.ds[low];
+				if(low < high)
+					this.ds[low++] = this.ds[high];
+				while(low < high && this.ds[low].getValue() < key.getValue()){
+					low++;
+				}
+				// 可能已经结束了, 赋值时候需要移位
+				if(low < high)
+					this.ds[high--] = this.ds[low];
             }
             this.ds[low] = key;
             sort(left,low-1);
             sort(low+1,right);
 		}
+
 	}
 	
 	public Data[] sort() {
@@ -66,7 +67,18 @@ public class QueckSort implements ISort {
 	}
 	
 	public Data[] sort(Data[] ds) {
-		this.ds = (Data[])ds.clone(); 
+		this.ds = (Data[])ds.clone();
 		return sort();
 	}
+
+}
+
+interface A{
+	int b = 1;
+	static void as(){int a = 0;}
+}
+abstract class AA {
+	static int  a;
+	{a = 2;}
+	public static void as(){}
 }

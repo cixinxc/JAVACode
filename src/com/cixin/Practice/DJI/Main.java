@@ -1,8 +1,11 @@
 package com.cixin.Practice.DJI;
 
+import com.cixin.Learning.Code.List.LinkList;
+
 import java.sql.Array;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 class A{
@@ -43,7 +46,6 @@ public class Main {
                 strs2[i2] = strs[i];
                // strs2[i2].replaceAll()
             }
-
         }
     }
 

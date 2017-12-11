@@ -1,12 +1,26 @@
 import com.cixin.EffectiveJava.Builder.Person;
 
+import java.lang.reflect.InvocationHandler;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
+
+class A {
+    InvocationHandler id;
+}
+class B extends A{
+    B() {
+        System.out.println("B");
+    }
+}
+class C extends A{
+    C() {
+        System.out.println("C");
+    }
+}
 public class Main {
-    /*
-    public static void main() {
-        new Main().qiuou();
-    }*/
+
     public static void qiuou() {
         Scanner in = new Scanner(System.in);
         String str = in.nextLine();
@@ -19,7 +33,7 @@ public class Main {
                     continue;
                 }
                 HashMap hm = new HashMap();
-                if(new Main().isO(s)) {
+                if(Main.isO(s)) {
                     sum++;
                 }
             }
