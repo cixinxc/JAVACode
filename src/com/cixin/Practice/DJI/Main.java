@@ -1,11 +1,7 @@
 package com.cixin.Practice.DJI;
 
-import com.cixin.Learning.Code.List.LinkList;
-
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 class A{

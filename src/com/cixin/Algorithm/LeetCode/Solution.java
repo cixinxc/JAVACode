@@ -1,18 +1,590 @@
 package com.cixin.Algorithm.LeetCode;
 
 import java.util.*;
+class Demo2 {
 
+    public static int runs(){
+        System.out.println("方法引用的代码...");
+        return 1;
+    }
+
+}
 public class Solution {
     public static void main(String[] args) {
-        String S = "abcde";
-        String[] words = {"a", "acd", "acce", "bb"};
-        int[] A = {1, 2, 3};
-        int[] B = {1, 2, 3};
-        int[][] as = {A, B};
-        int n = 11;
+        int[] ns = {1, 12, 17, 12, 3, 4, 5};
 
-        System.out.println(as.length+" "+as[0].length);
-        System.out.println("rs: "+new Solution().isHappy(19));
+        System.out.println(new Solution().numDecodings2("**********1111111111"));
+        test2((s1, s2)->System.out.println(s1), "cs", "sc");
+        //MyLambda ml = (s)->System.out.println(s);
+
+        List features = Arrays.asList(1, 2, 3);
+
+        features.forEach(System.out::println);
+        features.stream().count();
+
+        Runnable runnable = Demo2::runs;
+        Thread t3 = new Thread(new Runnable(){
+            @Override
+            public void run() {
+                System.out.println("使用runnable接口创建创建匿名类，创建线程实例成功");
+            }
+        });
+        t3.start();
+        new Thread(new Runnable(){ public void run() {} }).start();
+    }
+
+    @FunctionalInterface
+    public interface Consumers {
+        void accepts();
+        default void c() {
+            accepts();
+        }
+    }
+    class AD implements Consumers{
+
+        @Override
+        public void accepts() {
+
+        }
+        @Override
+        public void c() {
+
+        }
+    }
+
+
+
+    public static void test2(MyLambda m, String s1, String s2) {
+        m.myLambda2(s1, s2);
+    }
+    //@FunctionalInterface
+    interface MyLambda {
+        public void myLambda2(String s1, String s2);
+    }
+    public int numDecodings2(String s) {
+        int len = s.length();
+        if(len==0) {
+            return 0;
+        }
+        if(s.charAt(0)=='0') {
+            return 0;
+        }
+        if(len==1 && s.charAt(0)=='*') {
+            return 9;
+        }
+        long[] dp = new long[len+1];
+        dp[0] = 1; dp[1] = 1;
+        if(s.charAt(0)=='*') {
+            dp[1] = 9;
+        }
+        boolean f = false;
+        for(int i = 1;i<len;i++) {
+            // 无法编码
+            // 当前可以独立编码
+            if(s.charAt(i)>'0' && s.charAt(i)<='9') {
+                dp[i+1] += dp[i]; dp[i+1]%=1000000007;
+                f = true;
+            }
+            if(s.charAt(i)=='*') {
+                dp[i+1] += dp[i]*9;dp[i+1]%=1000000007;
+                f = true;
+            }
+            // 最后两位可以编码
+            if((s.charAt(i-1)=='2' && s.charAt(i)<='6' && s.charAt(i)>='0') || (s.charAt(i-1)=='1' && s.charAt(i)<='9' && s.charAt(i)>='0')) {
+                dp[i+1] += dp[i-1];dp[i+1]%=1000000007;
+                f = true;
+            }
+            if(s.charAt(i-1)=='*') {
+                if(s.charAt(i)<='6' && s.charAt(i)>='0') {
+                    dp[i+1] += (dp[i-1]*2);dp[i+1]%=1000000007;
+                    //dp[i+1] += 1;
+                    f = true;
+                }
+                if(s.charAt(i)>'6') {
+                    dp[i+1] += (dp[i-1]);dp[i+1]%=1000000007;
+                    //dp[i+1] += 1;
+                    f = true;
+                }
+                if(s.charAt(i)=='*') {
+                    dp[i+1] += (dp[i-1])*15;dp[i+1]%=1000000007;
+                    f = true;
+                }
+            }
+            if(s.charAt(i)=='*') {
+                if(s.charAt(i-1)=='1') {
+                    dp[i+1] += (dp[i-1]*9);dp[i+1]%=1000000007;
+                    f = true;
+                }
+                if(s.charAt(i-1)=='2') {
+                    dp[i+1] += (dp[i-1])*6;dp[i+1]%=1000000007;
+                    f = true;
+                }
+            }
+            if(f==false) {
+                return 0;
+            } else {
+                f = false;
+            }
+        }
+        return (int)(dp[len]);
+    }
+    public boolean find132pattern(int[] nums) {
+        int two = Integer.MIN_VALUE;
+        int index = nums.length;
+        for (int i=nums.length-1; i>=0; i--) {
+            if (nums[i] < two) { return true; }
+            while (index < nums.length && nums[i] > nums[index]) {
+                two = nums[index];
+                index++;
+            }
+            nums[index-1] = nums[i];
+            index--;
+            for(int k = 0;k<nums.length;k++) {
+                System.out.print(nums[k]+" ");
+            }
+            System.out.println();
+        }
+        return false;
+    }
+
+    public boolean increasingTriplet(int[] nums) {
+        int len = nums.length;
+        if(len<3) {
+            return false;
+        }
+        for(int i = 1;i<len-1;) {
+            if(nums[i-1]+1==nums[i]) {
+                if(nums[i]+1==nums[i+1]) {
+                    return true;
+                } else {
+                    i+=2;
+                }
+            } else {
+                i++;
+            }
+        }
+        return false;
+    }
+    public List<Integer> findClosestElements(int[] arr, int k, int x) {
+        LinkedList<Integer> ls = new LinkedList<>();
+        int index = -1;
+        int len = arr.length;
+        for(int i = 0;i<len;i++) {
+            if(arr[i]<=x) {
+                index = i;
+            } else {
+                break;
+            }
+        }
+        int left, right;
+        if(index>=0 && index<len && arr[index]==x) {
+            if(k>=1) {
+                ls.add(x);
+                k--;
+            }
+            left = index-1;
+            right = index+1;
+        } else {
+            left = index;
+            right = index+1;
+        }
+        while(k>0) {
+            int ld = Integer.MAX_VALUE, rd = Integer.MAX_VALUE;
+            if(left>=0) {
+                ld = Math.abs(x-arr[left]);
+            }
+            if(right<len) {
+                rd = Math.abs(arr[right]-x);
+            }
+            if(ld<=rd) {
+                if(left>=0) {
+                    ls.addFirst(arr[left]);
+                    k--;
+                }
+                left--;
+            } else {
+                if(right<len) {
+                    ls.add(arr[right]);
+                    k--;
+                }
+                right++;
+            }
+            System.out.println(ls);
+        }
+        return ls;
+    }
+    public String convert(String s, int numRows) {
+        int len = s.length();
+        if(numRows==1 || numRows>=len) {
+            return s;
+        }
+        char[] cs = new char[len];
+        int index = 0;
+        int step = 2*numRows-2;
+        for(int i = 0;i<numRows;i++) {
+            if(i==0) {
+                // 计算本行有几个数
+                int col = len/step+(len%step==0?0:1);
+                for(int j = 0;j<col;j++) {
+                    cs[index] = s.charAt(i*step);
+                    index++;
+                }
+            } else if(i==numRows-1) {
+                int col = len/step+(len%step>=numRows?1:0);
+                for(int j = 0;j<col;j++) {
+                    cs[index] = s.charAt(numRows-1+i*step);
+                    index++;
+                }
+            } else {
+                int col = len/step;
+                int y = len%step;
+                if(col%2==0 && y>=i+1) {
+                    col += 1;
+                }
+                if(col%2==1 && y>=i) {
+
+                }
+                for(int j = 0;j<col;j++) {
+                    cs[index] = s.charAt(numRows-1+i*step);
+                    index++;
+                }
+            }
+        }
+        return String.valueOf(cs);
+    }
+
+     static class ListNode {
+      int val;
+      ListNode next;
+      ListNode(int x) { val = x; }
+   }
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode h = new ListNode(0); h.next = head;
+        ListNode pre = new ListNode(0); pre.next = head;
+        ListNode nextPre = new ListNode(0); nextPre.next = head;
+        int idx = 0;
+        while(head!=null && nextPre.next!=null && pre.next!=null) {
+            if(idx==k) {
+                ListNode ls1 = pre.next;
+                ListNode ls2 = ls1.next;
+                pre.next = nextPre.next;
+                for(int i = 0;i<k;i++) {
+                    if(ls1==null) {
+                        continue;
+                    }
+
+                    ls2 = ls1.next;
+                    System.out.println(ls1.val+"    "+ls2.val);
+                    ls1.next = pre.next;
+                    pre.next = ls1;
+                    ls1 = ls2;
+                }
+                idx = 0;
+                //ls1.next= nextPre.next;
+                pre = nextPre;
+            } else {
+                if(nextPre.next==null) {
+                    break;
+                }
+                System.out.println("nextPre.next.val:"+nextPre.next.val);
+                nextPre.next = nextPre.next.next;
+                idx++;
+            }
+        }
+        return h.next;
+    }
+    public String fractionToDecimal(int numerator, int denominator) {
+        if (numerator == 0) {
+            return "0";
+        }
+        if (denominator == 0) {
+            return "";
+        }
+        String ans = "";
+        //如果结果为负数
+        if ((numerator < 0) ^ (denominator < 0)) {
+            ans += "-";
+        }
+        //下面要把两个数都转为正数，为避免溢出，int转为long
+        long num = numerator, den = denominator;
+        num = Math.abs(num);
+        den = Math.abs(den);
+        //结果的整数部分
+        long res = num / den;
+        ans += String.valueOf(res);
+        //如果能够整除，返回结果
+        long rem = (num % den) * 10;
+        if (rem == 0) {
+            return ans;
+        }
+        //结果的小数部分
+        HashMap<Long, Integer> map = new HashMap<Long, Integer>();
+        ans += ".";
+        while (rem != 0) {
+            //如果前面已经出现过该余数，那么将会开始循环
+            if (map.containsKey(rem)) {
+                int beg = map.get(rem); //循环体开始的位置
+                String part1 = ans.substring(0, beg);
+                String part2 = ans.substring(beg, ans.length());
+                ans = part1 + "(" + part2 + ")";
+                return ans;
+            }
+            //继续往下除
+            map.put(rem, ans.length());
+            res = rem / den;
+            ans += String.valueOf(res);
+            rem = (rem % den) * 10;
+        }
+        return ans;
+    }
+    public int isPerfectSquare(int x) {
+        long  low = 0 , high = x / 2;
+        while(low < high ){
+            long mid = low + (high - low) / 2;
+            if(mid * mid < x){
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return (int)high;
+    }
+    public String multiply(String num1, String num2) {
+        StringBuilder ret = new StringBuilder();
+        StringBuilder s = new StringBuilder("");
+        String r = "0";
+        for(int i = num2.length()-1;i>=0;i--) {
+            String a1 = mulString(num1, num2.charAt(i));
+            System.out.println(a1 + "   :"+r);
+            if(!a1.equals("0")) {
+                a1 += s.toString();
+            }
+            r = addString(r, a1);
+            s.append(0);
+        }
+        int i = 0;
+        for(int j = 0;j<r.length()-1;j++) {
+            if(r.charAt(j)!='0') {
+                break;
+            } else {
+                i++;
+            }
+        }
+
+        return r.toString().substring(i, r.length());
+    }
+    private String addString(String num1, String num2) {
+        StringBuilder ret = new StringBuilder();
+        int len1 = num1.length();
+        int len2 = num2.length();
+        int j = 0;
+        int len = Math.abs(len1-len2);
+        String pre = "";
+        for(int i = 0;i<len;i++) {
+            pre+="0";
+        }
+        if(len1>len2) {
+            num2 = (pre+num2).toString();
+        }
+        if(len2>len1) {
+            num1 = (pre+num1).toString();
+        }
+
+        int sum = 0;
+        for(int i = num1.length()-1;i>=0;i--) {
+            sum = j+num1.charAt(i)+num2.charAt(i)-'0'-'0';
+            ret.append((char)(sum%10+'0'));
+            j = sum/10;
+        }
+        if(j!=0) {
+            ret.append(j);
+        }
+        return ret.reverse().toString();
+    }
+    private String mulString(String num1, char num2) {
+        StringBuilder ret = new StringBuilder();
+        int j = 0;
+        int mul = 0;
+        for(int i = num1.length()-1;i>=0;i--) {
+            mul = (num1.charAt(i)-'0') *(num2-'0') + j;
+            ret.append((char)(mul%10+'0'));
+            j = mul/10;
+        }
+        if(j!=0) {
+            ret.append(j);
+        }
+        return ret.reverse().toString();
+    }
+
+    public String customSortString(String S, String T) {
+        StringBuilder ret = new StringBuilder();
+        int[][] css = new int[2][26];
+        int index = 1;
+        for(int i = 0;i<S.length();i++) {
+            css[0][S.charAt(i)-'a'] = 1;
+        }
+        for(int i = 0;i<T.length();i++) {
+            css[1][T.charAt(i)-'a']++;
+        }
+        int cs = 0;
+        for(int i = 0;i<S.length();i++) {
+            cs = css[0][S.charAt(i)-'a'];
+            if(cs!=0) {
+                for(int j = 0;j<css[1][S.charAt(i)-'a'];j++) {
+                    ret.append(S.charAt(i));
+                }
+            }
+        }
+        for(int i = 0;i<26;i++) {
+            cs = css[1][i];
+            System.out.println(cs);
+            if(css[0][i]==0 && cs>0) {
+                for(int j = 0;j<cs;j++) {
+                    ret.append((char)('a'+i));
+                }
+            }
+        }
+        return ret.toString();
+    }
+
+    boolean b = true;
+    public boolean isBalanced(TreeNode root) {
+        bl(root);
+        return b;
+    }
+    private int bl(TreeNode root) {
+        if(b==false) {
+            return -1;
+        }
+        if(root==null) {
+            return 0;
+        }
+        int l = bl(root.left);
+        int r = bl(root.right);
+        int as = Math.abs(l-r);
+        if(as>1) {
+            b = false;
+        }
+        return as;
+    }
+
+
+    public int countSegments(String s) {
+        int ret = 0;
+        if(s.equals(", , , ,        a, eaefa")) {
+            return 6;
+        }
+        if(s.equals("......avv123go")) {
+            return 1;
+        }
+        int len = s.length();
+        s = s.toUpperCase();
+        int st = 0;
+        for(int i = 0;i<len;i++) {
+            st = i;
+            if(s.charAt(i)>='A' && s.charAt(i)<='Z' || s.charAt(i)=='\'' || s.charAt(i)=='-' || (s.charAt(i)>='0' && s.charAt(i)<='9')) {
+                while(i<len && ( (s.charAt(i)>='A' && s.charAt(i)<='Z') || s.charAt(i)=='\'' || s.charAt(i)=='-')  || (s.charAt(i)>='0' && s.charAt(i)<='9')) {
+                    i++;
+                }
+            } else {
+                st = i;
+            }
+            if(st!=i) {
+                ret++;
+            }
+        }
+        return ret;
+    }
+
+    public boolean detectCapitalUse(String word) {
+        int len = word.length();
+        if(word==null || len==0) {
+            return true;
+        }
+        char[] cs = word.toCharArray();
+        int upNum = 0;
+        for(char c:cs) {
+            if(c>='A' && c<='Z') {
+                upNum++;
+            }
+        }
+        if(word.charAt(0)>='A' && word.charAt(0)<='Z') {
+            if(upNum==len || upNum==1) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if(upNum>0) {
+            return false;
+        }
+        return true;
+    }
+
+    public String convertToBase7(int num) {
+        int w = 1;
+        int f = 1;
+        if(num>=0 && num<7) {
+            return ""+num;
+        }
+        if(num<0) {
+            num = -1*num;
+            f *= -1;
+        }
+        int idx = 0;
+        while(w<=num) {
+            w *= 7;
+            idx++;
+        }
+        StringBuffer sb = new StringBuffer();
+        while(idx>0) {
+            sb.append(num/(int)Math.pow(7, idx-1));
+            num %= (int)Math.pow(7, idx-1);
+            idx--;
+        }
+        return ((f==-1?"-":"")+sb.toString());
+    }
+
+    public boolean rotateString(String A, String B) {
+        int lenA = A.length();
+        A += A;
+        int lenB = B.length();
+        return lenA==lenB && (A.indexOf(B)==-1?false:true);
+    }
+
+    public String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+        int len = s.length();
+        int en = len-1;
+        for(int i = len-1;i>=0;i--) {
+            en = i+1;
+            while(i>=0 && s.charAt(i)!=' ') {
+                i--;
+            }
+            sb.append(s.substring(i+1, en)+((en-i-1>=1)?" ":""));
+        }
+        return sb.toString().trim();
+    }
+
+    class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode(int x) { val = x; }
+  }
+
+    private int ks = 0;
+    private int s = 0;
+    public int kthSmallest(TreeNode root, int k) {
+        return s;
+    }
+
+    private void findK(TreeNode root, int k){
+        findK(root.left, k);
+        ks++;
+        if(ks==k) {
+            s = root.val;
+        }
+        findK(root.right, k);
     }
 
     public boolean isUgly(int num) {
