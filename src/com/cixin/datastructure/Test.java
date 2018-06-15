@@ -13,9 +13,34 @@ public class Test {
         for(int i = 1;i<100;i++) {
             bst.insert(new MyTreeNode(rand.nextInt(100)), bst.getRoot());
         }
+        //inOrder(bst.getRoot());
+        bst = new BST(new MyTreeNode(8));
+        //bst.insert(new MyTreeNode(8), bst.getRoot());
 
-        System.out.println();
-        inOrder(bst.getRoot());
+        bst.insert(new MyTreeNode(4), bst.getRoot());
+        bst.insert(new MyTreeNode(2), bst.getRoot());
+        bst.insert(new MyTreeNode(6), bst.getRoot());
+        bst.insert(new MyTreeNode(1), bst.getRoot());
+        bst.insert(new MyTreeNode(3), bst.getRoot());
+        bst.insert(new MyTreeNode(5), bst.getRoot());
+        bst.insert(new MyTreeNode(7), bst.getRoot());
+
+        bst.insert(new MyTreeNode(12), bst.getRoot());
+        bst.insert(new MyTreeNode(10), bst.getRoot());
+        bst.insert(new MyTreeNode(14), bst.getRoot());
+        bst.insert(new MyTreeNode(9), bst.getRoot());
+        bst.insert(new MyTreeNode(11), bst.getRoot());
+        bst.insert(new MyTreeNode(13), bst.getRoot());
+        bst.insert(new MyTreeNode(15), bst.getRoot());
+
+        for(int i = 1;i<16;i++) {
+            int t = rand.nextInt(16);
+            System.out.println("delete "+t);
+            bst.delete(new MyTreeNode(t), bst.getRoot());
+            inOrder(bst.getRoot());
+        }
+
+
     }
 
     public static void inOrder(MyTreeNode root) {
