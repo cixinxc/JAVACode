@@ -5,12 +5,12 @@ import com.cixin.common.MyTreeNode;
 /**
  * @author cixin
  */
-public class BST<T> extends MyTree{
+public class BinarySortTree<T> extends MyTree{
     private MyTreeNode root = null;
 
-    public BST() {}
+    public BinarySortTree() {}
 
-    public BST(MyTreeNode root) {
+    public BinarySortTree(MyTreeNode root) {
         this.root = root;
     }
 
@@ -78,7 +78,7 @@ public class BST<T> extends MyTree{
             delete(node, root.getRightChild(), root, 1);
         } else {
             // 找到了节点，删除该节点
-            System.out.println("find the node");
+            System.out.println("find the node:"+root.getData());
             if(root.getLeftChild()==null && root.getRightChild()==null) {
                 if(type==1) {
                     pre.setRightChild(null);
@@ -88,40 +88,61 @@ public class BST<T> extends MyTree{
                     this.root = null;
                 }
             } else if(root.getLeftChild()!=null && root.getRightChild()==null) {
-                //root = root.getLeftChild();
                 if(type==1) {
                     pre.setRightChild(root.getLeftChild());
                 } else if(type==-1) {
                     pre.setLeftChild(root.getLeftChild());
                 } else {
-                    root.setData(root.getLeftChild().getData());
-                    MyTreeNode t = root.getLeftChild();
-                    root.setLeftChild(t.getLeftChild());
-                    root.setRightChild(t.getRightChild());
+                    this.root = root.getLeftChild();
                 }
             } else if(root.getLeftChild()==null && root.getRightChild()!=null) {
-                //root = root.getRightChild();
                 if(type==1) {
                     pre.setRightChild(root.getRightChild());
                 } else if(type==-1) {
                     pre.setLeftChild(root.getRightChild());
                 } else {
-                    root.setData(root.getRightChild().getData());
-                    MyTreeNode t = root.getRightChild();
-                    root.setLeftChild(t.getLeftChild());
-                    root.setRightChild(t.getRightChild());
+                    this.root = root.getRightChild();
                 }
             } else {
-                // 左右皆有子树，则使用右子树的最左节点替换到当前结点
-                // 首先找到右子树的最左的结点
-                MyTreeNode t = root.getRightChild();
-                while(t.getLeftChild()!=null) {
-                    pre = t;
-                    t = t.getLeftChild();
+                /*
+                    左右皆有子树，则使用右子树的最左节点替换到当前结点
+                    首先找到右子树的最左的结点BL，然后用BL节点替换被删除的节点root，并将root的右子树放在BL的最右子节点的右子树处
+                    首先找到右子树的最左的结点BL
+                */
+                // LeftChildOfRightTree:被删除节点的右子树的最左子节点，并且在此分支中可以保证被删除节点一定有右子树
+                MyTreeNode LeftChildOfRightTree = root.getRightChild();
+                // pres:LeftChildOfRightTree的前驱节点
+                MyTreeNode pres = LeftChildOfRightTree;
+
+                if(LeftChildOfRightTree.getLeftChild()==null) {
+                    //
+                    pres = root;
+                    pres.setData(LeftChildOfRightTree.getData());
+                    pres.setRightChild(LeftChildOfRightTree.getRightChild());
+                    return;
+                } else {
+                    while(LeftChildOfRightTree.getLeftChild()!=null) {
+                        pres = LeftChildOfRightTree;
+                        LeftChildOfRightTree = pres.getLeftChild();
+                    }
+                    pres.setLeftChild(null);
                 }
-                // 设置被删除结点
-                root.setData(t.getData());
-                pre.setLeftChild(null);
+
+                MyTreeNode right = root.getRightChild();
+                MyTreeNode left = root.getLeftChild();
+                MyTreeNode newRoot = LeftChildOfRightTree;
+                if(type==0) {
+                    this.root.setData(LeftChildOfRightTree.getData());
+                } else if(type==-1) {
+                    pre.getLeftChild().setData(LeftChildOfRightTree.getData());
+                } else {
+                    pre.getRightChild().setData(LeftChildOfRightTree.getData());
+                }
+                newRoot.setLeftChild(left);
+                while(newRoot.getRightChild()!=null) {
+                    newRoot = newRoot.getRightChild();
+                }
+                newRoot.setRightChild(right);
             }
         }
     }

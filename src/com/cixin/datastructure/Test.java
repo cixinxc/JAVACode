@@ -1,20 +1,20 @@
 package com.cixin.datastructure;
 
 import com.cixin.common.MyTreeNode;
-import com.cixin.datastructure.tree.BST;
+import com.cixin.datastructure.tree.BinarySortTree;
 
 import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
-        BST bst = new BST(new MyTreeNode(50));
+        BinarySortTree bst = new BinarySortTree(new MyTreeNode(50));
         System.out.println(bst);
         Random rand = new Random();
         for(int i = 1;i<100;i++) {
             bst.insert(new MyTreeNode(rand.nextInt(100)), bst.getRoot());
         }
         //inOrder(bst.getRoot());
-        bst = new BST(new MyTreeNode(8));
+        bst = new BinarySortTree(new MyTreeNode(8));
         //bst.insert(new MyTreeNode(8), bst.getRoot());
 
         bst.insert(new MyTreeNode(4), bst.getRoot());
@@ -32,11 +32,16 @@ public class Test {
         bst.insert(new MyTreeNode(11), bst.getRoot());
         bst.insert(new MyTreeNode(13), bst.getRoot());
         bst.insert(new MyTreeNode(15), bst.getRoot());
-
-        for(int i = 1;i<16;i++) {
-            int t = rand.nextInt(16);
-            System.out.println("delete "+t);
-            bst.delete(new MyTreeNode(t), bst.getRoot());
+        int c = 1;
+        if(c==1) {
+            for(int i = 1;i<16;i++) {
+                int t = rand.nextInt(15)+1;
+                System.out.println("delete "+t);
+                bst.delete(new MyTreeNode(t), bst.getRoot());
+                inOrder(bst.getRoot());
+            }
+        } else {
+            bst.delete(new MyTreeNode(8), bst.getRoot());
             inOrder(bst.getRoot());
         }
 
