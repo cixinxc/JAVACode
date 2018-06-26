@@ -106,39 +106,43 @@ public class BinarySortTree<T> extends MyTree{
             } else {
                 /*
                     左右皆有子树，则使用右子树的最左节点替换到当前结点
-                    首先找到右子树的最左的结点BL，然后用BL节点替换被删除的节点root，并将root的右子树放在BL的最右子节点的右子树处
-                    首先找到右子树的最左的结点BL
+                    首先找到右子树的最左的结点BL，然后摘除BL节点，用BL节点替换被删除的节点root，并将root的右子树放在BL的最右子节点的右子树处
                 */
+                // pres:右子树最左节点的前驱节点
+                MyTreeNode pres =  root.getRightChild();
                 // LeftChildOfRightTree:被删除节点的右子树的最左子节点，并且在此分支中可以保证被删除节点一定有右子树
                 MyTreeNode LeftChildOfRightTree = root.getRightChild();
-                // pres:LeftChildOfRightTree的前驱节点
-                MyTreeNode pres = LeftChildOfRightTree;
 
-                if(LeftChildOfRightTree.getLeftChild()==null) {
-                    //
-                    pres = root;
-                    pres.setData(LeftChildOfRightTree.getData());
-                    pres.setRightChild(LeftChildOfRightTree.getRightChild());
+                if(pres.getLeftChild()==null) {
+                    // 如果右子树没有所谓的最左子节点==右子树根节点即为最左子节点
+                    /*
+                    *           8
+                    *       4        12(root,待删)
+                    *      ...     9     15(pres)
+                    *                      17
+                    * */
+                    root.setData(pres.getData());
+                    root.setRightChild(pres.getRightChild());
                     return;
-                } else {
-                    while(LeftChildOfRightTree.getLeftChild()!=null) {
-                        pres = LeftChildOfRightTree;
-                        LeftChildOfRightTree = pres.getLeftChild();
-                    }
-                    pres.setLeftChild(null);
                 }
-
+                // 找出右子树的最左节点BL
+                while(LeftChildOfRightTree.getLeftChild()!=null) {
+                    pres = LeftChildOfRightTree;
+                    LeftChildOfRightTree = pres.getLeftChild();
+                }
+                // 摘除BL节点
+                pres.setLeftChild(null);
                 MyTreeNode right = root.getRightChild();
-                MyTreeNode left = root.getLeftChild();
-                MyTreeNode newRoot = LeftChildOfRightTree;
+                MyTreeNode newRoot;
                 if(type==0) {
-                    this.root.setData(LeftChildOfRightTree.getData());
+                    newRoot = this.root;
                 } else if(type==-1) {
-                    pre.getLeftChild().setData(LeftChildOfRightTree.getData());
+                    newRoot = pre.getLeftChild();
                 } else {
-                    pre.getRightChild().setData(LeftChildOfRightTree.getData());
+                    newRoot = pre.getRightChild();
                 }
-                newRoot.setLeftChild(left);
+                newRoot.setData(LeftChildOfRightTree.getData());
+                newRoot.setRightChild(LeftChildOfRightTree.getRightChild());
                 while(newRoot.getRightChild()!=null) {
                     newRoot = newRoot.getRightChild();
                 }

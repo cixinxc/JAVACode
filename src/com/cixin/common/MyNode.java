@@ -6,7 +6,7 @@ package com.cixin.common;
  */
 public class MyNode<T> {
 
-    private T data;
+    protected T data;
     private MyNode nextNode = null;
 
     public MyNode() {}

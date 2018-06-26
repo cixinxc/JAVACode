@@ -1,9 +1,9 @@
 package com.cixin.common;
 
 public class MyTreeNode<T extends Comparable> implements Comparable {
-    private T data;
-    private MyTreeNode leftChild = null;
-    private MyTreeNode rightChild = null;
+    protected T data;
+    protected MyTreeNode leftChild = null;
+    protected MyTreeNode rightChild = null;
 
     public MyTreeNode() {}
 

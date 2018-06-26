@@ -1,7 +1,8 @@
 package com.cixin.learning.Code.AVL.BST;
 
-import java.util.Random;
 import org.junit.Test;
+
+import java.util.Random;
 public class AvlTreeTest {
     private AvlTree<Integer> avlTree = new AvlTree<Integer>();
     @Test

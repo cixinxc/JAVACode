@@ -7,6 +7,10 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+
+/**
+ * @author cixinxc
+ */
 public class LambdaLearning {
     public static void main(String[] args) {
 
@@ -99,7 +103,7 @@ public class LambdaLearning {
         long i = persionLists.stream().flatMap(lists->lists.stream()).count();
         System.out.println(i);
         System.out.println(persionLists.stream().count());
-int is = 1;
+
         Stream.of(1, 2, 3, 4).mapToInt(p->p).forEach(System.out::println);
         //persionLists.stream().mapToInt()
         test1 t = ()->System.out.println("test1");
