@@ -1,6 +1,7 @@
 package com.cixin.datastructure.tree;
 
 import com.cixin.common.MyAVLNode;
+import com.cixin.common.MyTreeNode;
 
 /**
  * @author cixinxc
@@ -9,6 +10,18 @@ import com.cixin.common.MyAVLNode;
  **/
 public class AVLTree<T extends Comparable> {
     private MyAVLNode<T> root;
+
+    public AVLTree() {
+        this.root = null;
+    }
+
+    public MyAVLNode getRoot() {
+        return this.root;
+    }
+
+    public AVLTree(MyAVLNode node) {
+        this.root = node;
+    }
 
     private void LL(MyAVLNode node) {
         /*
@@ -36,6 +49,9 @@ public class AVLTree<T extends Comparable> {
         node.setRightChild(E);
         E.setLeftChild(F);
         E.setRightChild(H);
+
+        E.setHeight(Math.max(height(E.getLeftChild()), height(E.getRightChild()))+1);
+        node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
     }
 
     private void RR(MyAVLNode node) {
@@ -64,6 +80,9 @@ public class AVLTree<T extends Comparable> {
         node.setRightChild(D);
         D.setLeftChild(A);
         D.setRightChild(C);
+
+        D.setHeight(Math.max(height(D.getLeftChild()), height(D.getRightChild()))+1);
+        node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
     }
 
     private void LR(MyAVLNode node) {
@@ -89,32 +108,207 @@ public class AVLTree<T extends Comparable> {
     }
 
     public void insert(MyAVLNode node) {
-        insert(this.root, node);
+        insert(node, this.root);
     }
-    private void insert(MyAVLNode root, MyAVLNode node) {
+    private void insert(MyAVLNode node, MyAVLNode root) {
         if(root==null) {
             root = node;
+            return;
         } else if(root.getData().compareTo(node.getData())>0) {
+            //insert(node, root.getLeftChild());
             if(root.getLeftChild()==null) {
                 root.setLeftChild(node);
+                System.out.println("左边插入"+node.getData());
             } else {
                 insert(node, root.getLeftChild());
+                if(height(root.getLeftChild())-height(root.getRightChild())==2) {
+                    if(root.getLeftChild().getData().compareTo(node.getData())>0) {
+                        LL(root);
+                    } else {
+                        LR(root);
+                    }
+                }
             }
+
         } else if(root.getData().compareTo(node.getData())<0) {
+            //insert(node, root.getRightChild());
             if(root.getRightChild()==null) {
                 root.setRightChild(node);
+                System.out.println("右边插入"+node.getData());
             } else {
                 insert(node, root.getRightChild());
+                if(height(root.getLeftChild())-height(root.getRightChild())==-2) {
+                    if(root.getRightChild().getData().compareTo(node.getData())<0) {
+                        RR(root);
+                    } else {
+                        RL(root);
+                    }
+                }
+            }
+
+        }
+        root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+    }
+
+    public void delete(MyAVLNode node){
+        delete(node, this.root);
+    }
+    private void delete(MyAVLNode node, MyAVLNode root) {
+        MyAVLNode pre = new MyAVLNode();
+        pre.setLeftChild(root);
+        delete(node, root, pre, 0);
+    }
+    private void delete(MyAVLNode node, MyAVLNode root, MyAVLNode pre, int type) {
+        if(root==null) {
+            // 没有找到节点
+            return;
+        } else if(root.getData().compareTo(node.getData())>0) {
+            delete(node, root.getLeftChild(), root, -1);
+            if(height(root.getLeftChild())-height(root.getRightChild())==2) {
+                if(root.getLeftChild().getData().compareTo(node.getData())>0) {
+                    LL(root);
+                } else {
+                    LR(root);
+                }
+            }
+        } else if(root.getData().compareTo(node.getData())<0) {
+            delete(node, root.getRightChild(), root, 1);
+            if(height(root.getLeftChild())-height(root.getRightChild())==-2) {
+                if(root.getRightChild().getData().compareTo(node.getData())<0) {
+                    RR(root);
+                } else {
+                    RL(root);
+                }
             }
         } else {
-            return;
+            // 找到了节点，删除该节点
+            System.out.println("find the node:"+root.getData());
+            if(root.getLeftChild()==null && root.getRightChild()==null) {
+                // 被删除节点是叶子节点
+                if(type==1) {
+                    pre.setRightChild(null);
+                } else if(type==-1) {
+                    pre.setLeftChild(null);
+                } else {
+                    this.root = null;
+                }
+            } else if(root.getLeftChild()!=null && root.getRightChild()==null) {
+                // 被删除节点没有 右孩子节点
+                if(type==1) {
+                    pre.setRightChild(root.getLeftChild());
+                } else if(type==-1) {
+                    pre.setLeftChild(root.getLeftChild());
+                } else {
+                    this.root = root.getLeftChild();
+                }
+            } else if(root.getLeftChild()==null && root.getRightChild()!=null) {
+                // 被删除节点没有 左孩子节点
+                if(type==1) {
+                    pre.setRightChild(root.getRightChild());
+                } else if(type==-1) {
+                    pre.setLeftChild(root.getRightChild());
+                } else {
+                    this.root = root.getRightChild();
+                }
+            } else {
+                if(height(root.getRightChild())>height(root.getLeftChild())) {
+/*
+                    左右皆有子树，则使用右子树的最左节点替换到当前结点
+                    首先找到右子树的最左的结点BL，然后摘除BL节点，用BL节点替换被删除的节点root，并将root的右子树放在BL的最右子节点的右子树处
+                */
+                    // pres:右子树最左节点的前驱节点
+                    MyAVLNode pres =  root.getRightChild();
+                    // LeftChildOfRightTree:被删除节点的右子树的最左子节点，并且在此分支中可以保证被删除节点一定有右子树
+                    MyAVLNode LeftChildOfRightTree = root.getRightChild();
+
+                    if(pres.getLeftChild()==null) {
+                        // 如果右子树没有所谓的最左子节点==右子树根节点即为最左子节点
+                        /*
+                         *           8
+                         *       4        12(root,待删)
+                         *      ...     9     15(pres)
+                         *                      17
+                         * */
+                        root.setData(pres.getData());
+                        root.setRightChild(pres.getRightChild());
+                        return;
+                    }
+                    // 找出右子树的最左节点BL
+                    while(LeftChildOfRightTree.getLeftChild()!=null) {
+                        pres = LeftChildOfRightTree;
+                        LeftChildOfRightTree = pres.getLeftChild();
+                    }
+                    // 摘除BL节点
+                    pres.setLeftChild(null);
+                    MyAVLNode right = root.getRightChild();
+                    MyAVLNode newRoot;
+                    if(type==0) {
+                        newRoot = this.root;
+                    } else if(type==-1) {
+                        newRoot = pre.getLeftChild();
+                    } else {
+                        newRoot = pre.getRightChild();
+                    }
+                    newRoot.setData(LeftChildOfRightTree.getData());
+                    newRoot.setRightChild(LeftChildOfRightTree.getRightChild());
+                    while(newRoot.getRightChild()!=null) {
+                        newRoot = newRoot.getRightChild();
+                    }
+                    newRoot.setRightChild(right);
+                } else {
+                    /*
+                    左右皆有子树，则使用左子树的最右节点替换到当前结点
+                    首先找到左子树的最右的结点BR，然后摘除BR节点，用BR节点替换被删除的节点root，并将root的右子树放在BR的最右子节点的右子树处
+                */
+                    // pres:左子树最右节点的前驱节点
+                    MyAVLNode pres =  root.getLeftChild();
+                    // RightChildOfLeftTree:被删除节点的左子树的最右子节点，并且在此分支中可以保证被删除节点一定有右子树
+                    MyAVLNode RightChildOfLeftTree = root.getLeftChild();
+
+                    if(pres.getRightChild()==null) {
+                        // 如果左子树没有所谓的最右子节点==左子树根节点即为最右子节点
+                        /*
+                         *           8
+                         *       4        12(root,待删)
+                         *      ...     9     15(pres)
+                         *                      17
+                         * */
+                        root.setData(pres.getData());
+                        root.setLeftChild(pres.getLeftChild());
+                        return;
+                    }
+                    // 找出左子树的最右节点BR
+                    while(RightChildOfLeftTree.getRightChild()!=null) {
+                        pres = RightChildOfLeftTree;
+                        RightChildOfLeftTree = pres.getRightChild();
+                    }
+                    // 摘除BR节点
+                    pres.setRightChild(null);
+                    MyAVLNode left = root.getLeftChild();
+                    MyAVLNode newRoot;
+                    if(type==0) {
+                        newRoot = this.root;
+                    } else if(type==-1) {
+                        newRoot = pre.getLeftChild();
+                    } else {
+                        newRoot = pre.getRightChild();
+                    }
+                    newRoot.setData(RightChildOfLeftTree.getData());
+                    newRoot.setLeftChild(RightChildOfLeftTree.getLeftChild());
+                    while(newRoot.getLeftChild()!=null) {
+                        newRoot = newRoot.getLeftChild();
+                    }
+                    newRoot.setLeftChild(left);
+                }
+            }
         }
-        reBalance(root);
     }
 
-    private static void reBalance(MyAVLNode root) {
-
+    private static int height(MyAVLNode node) {
+        if(node==null) {
+            return 0;
+        }
+        return node.getHeight();
     }
-
 
 }

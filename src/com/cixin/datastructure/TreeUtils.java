@@ -1,5 +1,6 @@
 package com.cixin.datastructure;
 
+import com.cixin.common.MyAVLNode;
 import com.cixin.common.MyTreeNode;
 
 /**
@@ -24,6 +25,15 @@ public class TreeUtils {
         visit(root);
         preOrder(root.getLeftChild());
         preOrder(root.getRightChild());
+    }
+
+    public static void inOrder(MyAVLNode root) {
+        if(root==null) {
+            return;
+        }
+        inOrder(root.getLeftChild());
+        visit(root);
+        inOrder(root.getRightChild());
     }
 
     public static void inOrder(MyTreeNode root) {
