@@ -43,16 +43,17 @@ public class Test {
         Random rand = new Random();
 
         AVLTree bst = new AVLTree(new MyAVLNode(8));
-        int[] leftNode = {4, 2, 6, 1, 3, 5, 7};
+        //int[] leftNode = {4, 2, 6, 1, 3, 5, 7};
+        int[] leftNode = {1,2, 3, 4,5};
         //int[] rightNode = {12, 10, 14, 9, 11, 13, 15};
-        int[] rightNode = {12, 10, 15, 9, 11, 13, 17, 14};
+        int[] rightNode = {12, 10, 15};
         for(int i:leftNode) {
             bst.insert(new MyAVLNode(i));
-            TreeUtils.inOrder(bst.getRoot());
+            TreeUtils.levelOrder(bst.getRoot());
         }
         for(int i:rightNode) {
-            bst.insert(new MyAVLNode(i));
-            TreeUtils.inOrder(bst.getRoot());
+           // bst.insert(new MyAVLNode(i));
+            //TreeUtils.levelOrder(bst.getRoot());
         }
         System.out.println("插入完成");
         TreeUtils.inOrder(bst.getRoot());

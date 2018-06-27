@@ -36,6 +36,7 @@ public class AVLTree<T extends Comparable> {
         *       E的右节点
         *
         * */
+        System.out.println("LL");
         MyAVLNode E = node.getLeftChild();
         MyAVLNode F = E.getRightChild();
         MyAVLNode H = node.getRightChild();
@@ -50,14 +51,23 @@ public class AVLTree<T extends Comparable> {
         E.setLeftChild(F);
         E.setRightChild(H);
 
-        E.setHeight(Math.max(height(E.getLeftChild()), height(E.getRightChild()))+1);
-        node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
+        if(E.getLeftChild()==null && E.getRightChild()==null) {
+            E.setHeight(0);
+        } else {
+            E.setHeight(Math.max(height(E.getLeftChild()), height(E.getRightChild()))+1);
+        }
+        if(node.getLeftChild()==null && node.getRightChild()==null) {
+            node.setHeight(0);
+        } else {
+            node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
+        }
+
     }
 
     private void RR(MyAVLNode node) {
         /*
-         *              node                                D
-         *           A           D                   node        E
+         *              node 1                                D
+         *           A           D 2                   node        E
          *                   C       E            A       C           F
          *                              F
          *
@@ -67,22 +77,32 @@ public class AVLTree<T extends Comparable> {
          *       D的左节点
          *
          * */
-        MyAVLNode D = node.getLeftChild();
-        MyAVLNode C = D.getRightChild();
-        MyAVLNode A = node.getRightChild();
+        System.out.println("RR");
+        MyAVLNode D = node.getRightChild();
+        MyAVLNode C = D.getLeftChild();
+        MyAVLNode A = node.getLeftChild();
 
         MyAVLNode temp = new MyAVLNode();
         temp.setData(node.getData());
         node.setData(D.getData());
-        node.setRightChild(D.getLeftChild());
+        node.setRightChild(D.getRightChild());
 
         D.setData(temp.getData());
-        node.setRightChild(D);
+        node.setLeftChild(D);
         D.setLeftChild(A);
         D.setRightChild(C);
 
-        D.setHeight(Math.max(height(D.getLeftChild()), height(D.getRightChild()))+1);
-        node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
+
+        if(D.getLeftChild()==null && D.getRightChild()==null) {
+            D.setHeight(0);
+        } else {
+            D.setHeight(Math.max(height(D.getLeftChild()), height(D.getRightChild()))+1);
+        }
+        if(node.getLeftChild()==null && node.getRightChild()==null) {
+            node.setHeight(0);
+        } else {
+            node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
+        }
     }
 
     private void LR(MyAVLNode node) {
@@ -92,6 +112,7 @@ public class AVLTree<T extends Comparable> {
         *       A       C               E       D             A B      D G
         *              B  D           A   B
         * */
+        System.out.println("LR");
         RR(node.getLeftChild());
         LL(node);
     }
@@ -103,17 +124,32 @@ public class AVLTree<T extends Comparable> {
          *       A       C               E       D             A B      D G
          *              B  D           A   B
          * */
+        System.out.println("RL");
         LL(node.getRightChild());
         RR(node);
     }
 
     public void insert(MyAVLNode node) {
         insert(node, this.root);
+        if(height(root)==2) {
+            if(root.getLeftChild().getData().compareTo(node.getData())>0) {
+                LL(root);
+            } else {
+                LR(root);
+            }
+        }
+        if(height(root)==-2) {
+            if(root.getRightChild().getData().compareTo(node.getData())<0) {
+                RR(root);
+            } else {
+                RL(root);
+            }
+        }
     }
     private void insert(MyAVLNode node, MyAVLNode root) {
         if(root==null) {
             root = node;
-            return;
+            //return;
         } else if(root.getData().compareTo(node.getData())>0) {
             //insert(node, root.getLeftChild());
             if(root.getLeftChild()==null) {
@@ -121,7 +157,8 @@ public class AVLTree<T extends Comparable> {
                 System.out.println("左边插入"+node.getData());
             } else {
                 insert(node, root.getLeftChild());
-                if(height(root.getLeftChild())-height(root.getRightChild())==2) {
+                //if(height(root.getLeftChild())-height(root.getRightChild())==2) {
+                if(height(root)==2) {
                     if(root.getLeftChild().getData().compareTo(node.getData())>0) {
                         LL(root);
                     } else {
@@ -134,10 +171,11 @@ public class AVLTree<T extends Comparable> {
             //insert(node, root.getRightChild());
             if(root.getRightChild()==null) {
                 root.setRightChild(node);
-                System.out.println("右边插入"+node.getData());
+                System.out.println("\n右边插入"+node.getData());
             } else {
                 insert(node, root.getRightChild());
-                if(height(root.getLeftChild())-height(root.getRightChild())==-2) {
+                //if(height(root.getLeftChild())-height(root.getRightChild())==-2) {
+                if(height(root)==-2) {
                     if(root.getRightChild().getData().compareTo(node.getData())<0) {
                         RR(root);
                     } else {
@@ -147,7 +185,12 @@ public class AVLTree<T extends Comparable> {
             }
 
         }
-        root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+        if(root.getLeftChild()==null && root.getRightChild()==null) {
+            root.setHeight(0);
+        } else {
+            root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+        }
+
     }
 
     public void delete(MyAVLNode node){
