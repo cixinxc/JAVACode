@@ -52,12 +52,12 @@ public class AVLTree<T extends Comparable> {
         E.setRightChild(H);
 
         if(E.getLeftChild()==null && E.getRightChild()==null) {
-            E.setHeight(0);
+            E.setHeight(1);
         } else {
             E.setHeight(Math.max(height(E.getLeftChild()), height(E.getRightChild()))+1);
         }
         if(node.getLeftChild()==null && node.getRightChild()==null) {
-            node.setHeight(0);
+            node.setHeight(1);
         } else {
             node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
         }
@@ -94,12 +94,12 @@ public class AVLTree<T extends Comparable> {
 
 
         if(D.getLeftChild()==null && D.getRightChild()==null) {
-            D.setHeight(0);
+            D.setHeight(1);
         } else {
             D.setHeight(Math.max(height(D.getLeftChild()), height(D.getRightChild()))+1);
         }
         if(node.getLeftChild()==null && node.getRightChild()==null) {
-            node.setHeight(0);
+            node.setHeight(1);
         } else {
             node.setHeight(Math.max(height(node.getLeftChild()), height(node.getRightChild()))+1);
         }
@@ -131,14 +131,14 @@ public class AVLTree<T extends Comparable> {
 
     public void insert(MyAVLNode node) {
         insert(node, this.root);
-        if(height(root)==2) {
+        if(height(root.getLeftChild())-height(root.getRightChild())>=2) {
             if(root.getLeftChild().getData().compareTo(node.getData())>0) {
                 LL(root);
             } else {
                 LR(root);
             }
         }
-        if(height(root)==-2) {
+        if(height(root.getLeftChild())-height(root.getRightChild())<=-2) {
             if(root.getRightChild().getData().compareTo(node.getData())<0) {
                 RR(root);
             } else {
@@ -158,7 +158,7 @@ public class AVLTree<T extends Comparable> {
             } else {
                 insert(node, root.getLeftChild());
                 //if(height(root.getLeftChild())-height(root.getRightChild())==2) {
-                if(height(root)==2) {
+                if(height(root.getLeftChild())-height(root.getRightChild())>=2) {
                     if(root.getLeftChild().getData().compareTo(node.getData())>0) {
                         LL(root);
                     } else {
@@ -175,7 +175,8 @@ public class AVLTree<T extends Comparable> {
             } else {
                 insert(node, root.getRightChild());
                 //if(height(root.getLeftChild())-height(root.getRightChild())==-2) {
-                if(height(root)==-2) {
+                //System.out.println(height(root.getLeftChild())+"   "+height(root.getRightChild()));
+                if(height(root.getLeftChild())-height(root.getRightChild())<=-2) {
                     if(root.getRightChild().getData().compareTo(node.getData())<0) {
                         RR(root);
                     } else {
@@ -186,11 +187,10 @@ public class AVLTree<T extends Comparable> {
 
         }
         if(root.getLeftChild()==null && root.getRightChild()==null) {
-            root.setHeight(0);
+            root.setHeight(1);
         } else {
             root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
         }
-
     }
 
     public void delete(MyAVLNode node){
@@ -200,29 +200,63 @@ public class AVLTree<T extends Comparable> {
         MyAVLNode pre = new MyAVLNode();
         pre.setLeftChild(root);
         delete(node, root, pre, 0);
+        if(root.getLeftChild()==null && root.getRightChild()==null) {
+            root.setHeight(1);
+        } else {
+            root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+        }
+        if(height(root.getLeftChild())-height(root.getRightChild())<=-2) {
+            if(height(root.getRightChild().getRightChild())>height(root.getRightChild().getLeftChild())) {
+                RR(root);
+            } else {
+                RL(root);
+            }
+        }
+        if(height(root.getLeftChild())-height(root.getRightChild())>=2) {
+            if(height(root.getLeftChild().getLeftChild())>height(root.getLeftChild().getRightChild())) {
+                LL(root);
+            } else {
+                LR(root);
+            }
+        }
     }
+
+    private static void reHeight(MyAVLNode root, int type) {
+        if(type==-1) {
+            if(root==null) {
+                return;
+            } else {
+                reHeight(root.getLeftChild(), -1);
+                if(root.getLeftChild()==null && root.getRightChild()==null) {
+                    root.setHeight(1);
+                } else {
+                    root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+                }
+            }
+        } else if(type==1) {
+            if(root==null) {
+                return;
+            } else {
+                reHeight(root.getRightChild(), 1);
+                if(root.getLeftChild()==null && root.getRightChild()==null) {
+                    root.setHeight(1);
+                } else {
+                    root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+                }
+            }
+        }
+    }
+
     private void delete(MyAVLNode node, MyAVLNode root, MyAVLNode pre, int type) {
         if(root==null) {
             // 没有找到节点
             return;
         } else if(root.getData().compareTo(node.getData())>0) {
             delete(node, root.getLeftChild(), root, -1);
-            if(height(root.getLeftChild())-height(root.getRightChild())==2) {
-                if(root.getLeftChild().getData().compareTo(node.getData())>0) {
-                    LL(root);
-                } else {
-                    LR(root);
-                }
-            }
+
         } else if(root.getData().compareTo(node.getData())<0) {
             delete(node, root.getRightChild(), root, 1);
-            if(height(root.getLeftChild())-height(root.getRightChild())==-2) {
-                if(root.getRightChild().getData().compareTo(node.getData())<0) {
-                    RR(root);
-                } else {
-                    RL(root);
-                }
-            }
+
         } else {
             // 找到了节点，删除该节点
             System.out.println("find the node:"+root.getData());
@@ -274,6 +308,10 @@ public class AVLTree<T extends Comparable> {
                          * */
                         root.setData(pres.getData());
                         root.setRightChild(pres.getRightChild());
+                        root.setHeight(height(root)-1);
+                        if(root.getLeftChild()==null && root.getRightChild()==null) {
+                            root.setHeight(1);
+                        }
                         return;
                     }
                     // 找出右子树的最左节点BL
@@ -298,6 +336,7 @@ public class AVLTree<T extends Comparable> {
                         newRoot = newRoot.getRightChild();
                     }
                     newRoot.setRightChild(right);
+                    reHeight(right, -1);
                 } else {
                     /*
                     左右皆有子树，则使用左子树的最右节点替换到当前结点
@@ -318,6 +357,7 @@ public class AVLTree<T extends Comparable> {
                          * */
                         root.setData(pres.getData());
                         root.setLeftChild(pres.getLeftChild());
+                        root.setHeight(height(root)-1);
                         return;
                     }
                     // 找出左子树的最右节点BR
@@ -342,7 +382,31 @@ public class AVLTree<T extends Comparable> {
                         newRoot = newRoot.getLeftChild();
                     }
                     newRoot.setLeftChild(left);
+                    reHeight(left, 1);
                 }
+            }
+        }
+        if(root.getLeftChild()==null && root.getRightChild()==null) {
+            root.setHeight(1);
+        } else {
+            root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+        }
+        if(height(root.getLeftChild())-height(root.getRightChild())<=-2) {
+            System.out.println(height(root.getLeftChild())+"  "+height(root.getRightChild()));
+            System.out.println(height(root.getRightChild().getRightChild())+"  "+height(root.getRightChild().getLeftChild()));
+            if(height(root.getRightChild().getRightChild())>height(root.getRightChild().getLeftChild())) {
+                RR(root);
+            } else {
+                RL(root);
+            }
+        }
+        if(height(root.getLeftChild())-height(root.getRightChild())>=2) {
+            System.out.println(height(root.getLeftChild())+"  "+height(root.getRightChild()));
+            System.out.println(height(root.getLeftChild().getLeftChild())+"  "+height(root.getLeftChild().getRightChild()));
+            if(height(root.getLeftChild().getLeftChild())>height(root.getLeftChild().getRightChild())) {
+                LL(root);
+            } else {
+                LR(root);
             }
         }
     }

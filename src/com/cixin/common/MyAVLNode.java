@@ -23,6 +23,7 @@ public class MyAVLNode<T extends Comparable> extends MyTreeNode {
 
     public MyAVLNode(T data) {
         this();
+        this.height = 1;
         this.data = data;
     }
 

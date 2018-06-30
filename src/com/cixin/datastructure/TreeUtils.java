@@ -87,12 +87,14 @@ public class TreeUtils {
             } else {
                 cur.add(node.getLeftChild());
                 cur.add(node.getRightChild());
+
             }
         }
-        list.add(cur);
-        if(nullNum==t) {
+    System.out.println(t+"  "+nullNum);
+        if(t==nullNum) {
             return;
         } else {
+            list.add(cur);
             levelOrder(list);
         }
     }

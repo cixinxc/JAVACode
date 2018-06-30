@@ -44,30 +44,36 @@ public class Test {
 
         AVLTree bst = new AVLTree(new MyAVLNode(8));
         //int[] leftNode = {4, 2, 6, 1, 3, 5, 7};
-        int[] leftNode = {1,2, 3, 4,5};
-        //int[] rightNode = {12, 10, 14, 9, 11, 13, 15};
-        int[] rightNode = {12, 10, 15};
+        int[] leftNode = {15, 14, 13, 12 , 11, 10 ,9 , 1, 2, 3, 4, 5, 6, 7};
+        int[] rightNode = {12, 10, 14, 9, 11, 13, 15};
+        //int[] rightNode = {12, 10, 15};
         for(int i:leftNode) {
             bst.insert(new MyAVLNode(i));
-            TreeUtils.levelOrder(bst.getRoot());
-        }
-        for(int i:rightNode) {
-           // bst.insert(new MyAVLNode(i));
             //TreeUtils.levelOrder(bst.getRoot());
         }
-        System.out.println("插入完成");
-        TreeUtils.inOrder(bst.getRoot());
+        for(int i:rightNode) {
+            //bst.insert(new MyAVLNode(i));
+            //TreeUtils.levelOrder(bst.getRoot());
+        }
+        System.out.println("\ninsert complete!");
+        //TreeUtils.inOrder(bst.getRoot());
         int c = 1;
         if(c==1) {
             for(int i = 1;i<16;i++) {
                 int t = rand.nextInt(15)+1;
                 System.out.println("delete "+t);
                 bst.delete(new MyAVLNode(t));
-                TreeUtils.inOrder(bst.getRoot());
+                TreeUtils.levelOrder(bst.getRoot());
             }
-        } else {
+        } else if(c==2) {
             bst.delete(new MyAVLNode(12));
-            TreeUtils.inOrder(bst.getRoot());
+            TreeUtils.levelOrder(bst.getRoot());
+        } else {
+            int[] delete = {5, 15, 12, 1, 11, 10, 9};
+            for(int i:delete) {
+                bst.delete(new MyAVLNode(i));
+                TreeUtils.levelOrder(bst.getRoot());
+            }
         }
     }
 
