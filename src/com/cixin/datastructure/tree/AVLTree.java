@@ -2,6 +2,7 @@ package com.cixin.datastructure.tree;
 
 import com.cixin.common.MyAVLNode;
 import com.cixin.common.MyTreeNode;
+import com.cixin.datastructure.TreeUtils;
 
 /**
  * @author cixinxc
@@ -78,6 +79,7 @@ public class AVLTree<T extends Comparable> {
          *
          * */
         System.out.println("RR");
+        //TreeUtils.levelOrder(node);
         MyAVLNode D = node.getRightChild();
         MyAVLNode C = D.getLeftChild();
         MyAVLNode A = node.getLeftChild();
@@ -113,6 +115,7 @@ public class AVLTree<T extends Comparable> {
         *              B  D           A   B
         * */
         System.out.println("LR");
+        //TreeUtils.levelOrder(node);
         RR(node.getLeftChild());
         LL(node);
     }
@@ -194,6 +197,7 @@ public class AVLTree<T extends Comparable> {
     }
 
     public void delete(MyAVLNode node){
+        System.out.println("delete "+node.getData());
         delete(node, this.root);
     }
     private void delete(MyAVLNode node, MyAVLNode root) {
@@ -308,35 +312,34 @@ public class AVLTree<T extends Comparable> {
                          * */
                         root.setData(pres.getData());
                         root.setRightChild(pres.getRightChild());
-                        root.setHeight(height(root)-1);
-                        if(root.getLeftChild()==null && root.getRightChild()==null) {
-                            root.setHeight(1);
-                        }
-                        return;
-                    }
-                    // 找出右子树的最左节点BL
-                    while(LeftChildOfRightTree.getLeftChild()!=null) {
-                        pres = LeftChildOfRightTree;
-                        LeftChildOfRightTree = pres.getLeftChild();
-                    }
-                    // 摘除BL节点
-                    pres.setLeftChild(null);
-                    MyAVLNode right = root.getRightChild();
-                    MyAVLNode newRoot;
-                    if(type==0) {
-                        newRoot = this.root;
-                    } else if(type==-1) {
-                        newRoot = pre.getLeftChild();
+                        root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+                        //root.setHeight(height(root)-1);
+                        //return;
                     } else {
-                        newRoot = pre.getRightChild();
+                        // 找出右子树的最左节点BL
+                        while(LeftChildOfRightTree.getLeftChild()!=null) {
+                            pres = LeftChildOfRightTree;
+                            LeftChildOfRightTree = pres.getLeftChild();
+                        }
+                        // 摘除BL节点
+                        pres.setLeftChild(null);
+                        MyAVLNode right = root.getRightChild();
+                        MyAVLNode newRoot;
+                        if(type==0) {
+                            newRoot = this.root;
+                        } else if(type==-1) {
+                            newRoot = pre.getLeftChild();
+                        } else {
+                            newRoot = pre.getRightChild();
+                        }
+                        newRoot.setData(LeftChildOfRightTree.getData());
+                        newRoot.setRightChild(LeftChildOfRightTree.getRightChild());
+                        while(newRoot.getRightChild()!=null) {
+                            newRoot = newRoot.getRightChild();
+                        }
+                        newRoot.setRightChild(right);
+                        reHeight(root.getRightChild(), -1);
                     }
-                    newRoot.setData(LeftChildOfRightTree.getData());
-                    newRoot.setRightChild(LeftChildOfRightTree.getRightChild());
-                    while(newRoot.getRightChild()!=null) {
-                        newRoot = newRoot.getRightChild();
-                    }
-                    newRoot.setRightChild(right);
-                    reHeight(right, -1);
                 } else {
                     /*
                     左右皆有子树，则使用左子树的最右节点替换到当前结点
@@ -357,32 +360,35 @@ public class AVLTree<T extends Comparable> {
                          * */
                         root.setData(pres.getData());
                         root.setLeftChild(pres.getLeftChild());
-                        root.setHeight(height(root)-1);
-                        return;
-                    }
-                    // 找出左子树的最右节点BR
-                    while(RightChildOfLeftTree.getRightChild()!=null) {
-                        pres = RightChildOfLeftTree;
-                        RightChildOfLeftTree = pres.getRightChild();
-                    }
-                    // 摘除BR节点
-                    pres.setRightChild(null);
-                    MyAVLNode left = root.getLeftChild();
-                    MyAVLNode newRoot;
-                    if(type==0) {
-                        newRoot = this.root;
-                    } else if(type==-1) {
-                        newRoot = pre.getLeftChild();
+                        //root.setHeight(height(root)-1);
+                        root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
+                        //return;
                     } else {
-                        newRoot = pre.getRightChild();
+                        // 找出左子树的最右节点BR
+                        while(RightChildOfLeftTree.getRightChild()!=null) {
+                            pres = RightChildOfLeftTree;
+                            RightChildOfLeftTree = pres.getRightChild();
+                        }
+                        // 摘除BR节点
+                        pres.setRightChild(null);
+                        MyAVLNode left = root.getLeftChild();
+                        MyAVLNode newRoot;
+                        if(type==0) {
+                            newRoot = this.root;
+                        } else if(type==-1) {
+                            newRoot = pre.getLeftChild();
+                        } else {
+                            newRoot = pre.getRightChild();
+                        }
+                        newRoot.setData(RightChildOfLeftTree.getData());
+                        newRoot.setLeftChild(RightChildOfLeftTree.getLeftChild());
+                        while(newRoot.getLeftChild()!=null) {
+                            newRoot = newRoot.getLeftChild();
+                        }
+                        newRoot.setLeftChild(left);
+                        //System.out.println("reHeight "+left.getData());
+                        reHeight(root.getLeftChild(), 1);
                     }
-                    newRoot.setData(RightChildOfLeftTree.getData());
-                    newRoot.setLeftChild(RightChildOfLeftTree.getLeftChild());
-                    while(newRoot.getLeftChild()!=null) {
-                        newRoot = newRoot.getLeftChild();
-                    }
-                    newRoot.setLeftChild(left);
-                    reHeight(left, 1);
                 }
             }
         }
@@ -392,8 +398,8 @@ public class AVLTree<T extends Comparable> {
             root.setHeight(Math.max(height(root.getLeftChild()), height(root.getRightChild()))+1);
         }
         if(height(root.getLeftChild())-height(root.getRightChild())<=-2) {
-            System.out.println(height(root.getLeftChild())+"  "+height(root.getRightChild()));
-            System.out.println(height(root.getRightChild().getRightChild())+"  "+height(root.getRightChild().getLeftChild()));
+            //System.out.println(height(root.getLeftChild())+"  "+height(root.getRightChild()));
+            //System.out.println(height(root.getRightChild().getRightChild())+"  "+height(root.getRightChild().getLeftChild()));
             if(height(root.getRightChild().getRightChild())>height(root.getRightChild().getLeftChild())) {
                 RR(root);
             } else {
@@ -401,8 +407,8 @@ public class AVLTree<T extends Comparable> {
             }
         }
         if(height(root.getLeftChild())-height(root.getRightChild())>=2) {
-            System.out.println(height(root.getLeftChild())+"  "+height(root.getRightChild()));
-            System.out.println(height(root.getLeftChild().getLeftChild())+"  "+height(root.getLeftChild().getRightChild()));
+            //System.out.println(height(root.getLeftChild())+"  "+height(root.getRightChild()));
+            //System.out.println(height(root.getLeftChild().getLeftChild())+"  "+height(root.getLeftChild().getRightChild()));
             if(height(root.getLeftChild().getLeftChild())>height(root.getLeftChild().getRightChild())) {
                 LL(root);
             } else {
