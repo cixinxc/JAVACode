@@ -1,0 +1,34 @@
+
+Bsquid:UndocumentedApi
+"Document this public method.(¡şÏÖøÿÿÿÿ
+Asquid:S11665"%Either log or rethrow this exception.(¥¨›ıÿÿÿÿ
+<squid:S1166H"%Either log or rethrow this exception.(Å¡ß
+?squid:S1148I"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+<squid:UndocumentedApi	"Document this public class.(Óµ¨œ
+Tsquid:S1197
+"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ
+?squid:S11488"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S11486"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+U"squid:SwitchLastCaseIsDefaultCheckg""Add a default case to this switch.(ÕÄªâşÿÿÿÿ
+d
+squid:S134%"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(¥¤’
+Q
+squid:S106:";Replace this usage of System.out or System.err by a logger.(ù§é
+{squid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ï„Š¡şÿÿÿÿ
+=squid:S2275ˆ"%String contains no format specifiers.(ôéÕ¥
+gsquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(´ªõÊøÿÿÿÿ
+wsquid:S1149„"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+vsquid:S1149?"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+[squid:S21477"DCombine this catch with the one at line 53, which has the same body.(Å¡ß
+vsquid:S1149#"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+dsquid:S1192U"MDefine a constant instead of duplicating this literal "</font></td>" 4 times.(¶êÙ
+Qsquid:S1118	":Add a private constructor to hide the implicit public one.(Óµ¨œ
+~squid:S1192Q"bDefine a constant instead of duplicating this literal "<td><font color=red>-</font></td>" 5 times.(àÊÅøÿÿÿÿ
+<squid:S11667"%Either log or rethrow this exception.(Å¡ß
+vsquid:S1149z"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+osquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.( õøº
+vsquid:S1149N"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+vsquid:S1149Z"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+V
+squid:S1064";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+<squid:S2275~"%String contains no format specifiers.(ôéÕ¥

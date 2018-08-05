@@ -1,0 +1,17 @@
+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(ã™Èòûÿÿÿÿ
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(‰•£Ìûÿÿÿÿ
+Q
+squid:S1061";Replace this usage of System.out or System.err by a logger.(ƒº÷™
+Asquid:UndocumentedApi
+"Document this public class.(æí®ûÿÿÿÿ
+=squid:UndocumentedApi"Document this public method.(ßÉŞœ
+Bsquid:UndocumentedApi"Document this public method.(‚ëô¡şÿÿÿÿ
+=squid:UndocumentedApi"Document this public method.(êØ¶™
+Fsquid:S00108%")Either remove or fill this block of code.(çÂ¤íùÿÿÿÿ
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(‚ëô¡şÿÿÿÿ
+Vsquid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+Tsquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+Tsquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ

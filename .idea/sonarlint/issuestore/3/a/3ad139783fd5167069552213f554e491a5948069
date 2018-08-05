@@ -1,0 +1,16 @@
+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(¤ ¬ÿÿÿÿÿ
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(Í¬óíÿÿÿÿÿ
+V
+squid:S106+";Replace this usage of System.out or System.err by a logger.(¤ ¬ÿÿÿÿÿ
+V
+squid:S106,";Replace this usage of System.out or System.err by a logger.(Í¬óíÿÿÿÿÿ
+Q
+squid:S106-";Replace this usage of System.out or System.err by a logger.(İîß›
+<squid:UndocumentedApi"Document this public class.(ñÅ³ª
+=squid:UndocumentedApi	"Document this public method.(Çµí‘
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(ñÅ³ª
+<squid:S1166."%Either log or rethrow this exception.(”ı¾
+?squid:S1148/"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

@@ -1,0 +1,125 @@
+
+Lsquid:EmptyStatementUsageCheckÁ"Remove this empty statement.(Ô½°»ûÿÿÿÿ
+Qsquid:S2864Í"4Iterate over the "entrySet" instead of the "keySet".(İ’ú‡şÿÿÿÿ
+=squid:S1659‹" Declare "i3" on a separate line.(ªæğãÿÿÿÿÿ
+=squid:S1659‹" Declare "i5" on a separate line.(ªæğãÿÿÿÿÿ
+:squid:S1659×""Declare "slow" on a separate line.(¢ğÉù
+<squid:S1659î"$Declare "second" on a separate line.(òªÆç
+=squid:S1659ï"%Declare "newHead" on a separate line.(„Ó…³
+Xsquid:S1191"<Replace this usage of Sun classes by ones from the Java API.(°Š ÿÿÿÿÿ
+usquid:S22934"YReplace the type specification in this constructor call with the diamond operator ("<>").(×ßğÎÿÿÿÿÿ
+usquid:S22935"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤²Ûôÿÿÿÿÿ
+psquid:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰êïû
+usquid:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(±À›©üÿÿÿÿ
+psquid:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÃªÄ…
+vsquid:S2293‰"YReplace the type specification in this constructor call with the diamond operator ("<>").(çÔ‹¶şÿÿÿÿ
+Fsquid:S1444Õ")Make this "public static min" field final(ù©÷úÿÿÿÿ
+@squid:S1444Ö")Make this "public static max" field final(ëø“ 
+Bsquid:S1444×"*Make this "public static minM" field final(Üª™
+Gsquid:S1444Ø"*Make this "public static maxM" field final(á›ˆ³şÿÿÿÿ
+Usquid:S1213Õ"8Move this variable to comply with Java Code Conventions.(ù©÷úÿÿÿÿ
+Osquid:S1213Ö"8Move this variable to comply with Java Code Conventions.(ëø“ 
+Psquid:S1213×"8Move this variable to comply with Java Code Conventions.(Üª™
+Usquid:S1213Ø"8Move this variable to comply with Java Code Conventions.(á›ˆ³şÿÿÿÿ
+Psquid:S1213"8Move this variable to comply with Java Code Conventions.(®ÑıĞ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(æÌ†Ãşÿÿÿÿ
+gsquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(é¯ÁÛùÿÿÿÿ
+†squid:S1319J"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ÿø·"
+squid:S1319™"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(­ª£Ğüÿÿÿÿ
+‹squid:S1319Ÿ"nThe type of the "als" object should be an interface such as "List" rather than the implementation "ArrayList".(ğĞ–™ıÿÿÿÿ
+‹squid:S1319Õ"nThe type of the "min" object should be an interface such as "List" rather than the implementation "ArrayList".(ù©÷úÿÿÿÿ
+…squid:S1319Ö"nThe type of the "max" object should be an interface such as "List" rather than the implementation "ArrayList".(ëø“ 
+e
+squid:S134¨"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(„å†·
+`squid:S2583ø"CChange this condition so that it does not always evaluate to "true"(ÊÏ Èÿÿÿÿÿ
+`squid:S2583Y"DChange this condition so that it does not always evaluate to "false"(ù¬óôÿÿÿÿÿ
+=squid:UndocumentedApi1"Document this public method.(„©Å
+<squid:UndocumentedApiJ"Document this public method.(Ÿø·"
+=squid:UndocumentedApiX"Document this public method.(ĞãÑ–
+=squid:UndocumentedApip"Document this public method.(ñÜãÄ
+Bsquid:UndocumentedApi|"Document this public method.(»´½®ÿÿÿÿÿ
+>squid:UndocumentedApi†"Document this public method.(®Êÿ£
+Csquid:UndocumentedApi™"Document this public method.(­ª£Ğüÿÿÿÿ
+Csquid:UndocumentedApiŸ"Document this public method.(ğĞ–™ıÿÿÿÿ
+Csquid:UndocumentedApi°"Document this public method.(Şœã”ÿÿÿÿÿ
+>squid:UndocumentedApi·"Document this public method.(œäŸ­
+=squid:UndocumentedApiÄ"Document this public method.(ô½¹f
+Bsquid:UndocumentedApiÕ"Document this public field.(ù©÷úÿÿÿÿ
+<squid:UndocumentedApiÖ"Document this public field.(ëø“ 
+=squid:UndocumentedApi×"Document this public field.(Üª™
+Bsquid:UndocumentedApiØ"Document this public field.(á›ˆ³şÿÿÿÿ
+Csquid:UndocumentedApiÙ"Document this public method.(¤Ôáıÿÿÿÿ
+>squid:UndocumentedApi‰"Document this public method.(ÿ¢Éú
+>squid:UndocumentedApi“"Document this public method.(òû™
+Csquid:UndocumentedApiŸ"Document this public method.(øéøÿÿÿÿ
+>squid:UndocumentedApi£"Document this public method.(Î¤±¯
+>squid:UndocumentedApi¼"Document this public method.(Çµí‘
+>squid:UndocumentedApiÂ"Document this public method.(ƒÀëÎ
+>squid:UndocumentedApi"Document this public method.(šä°
+Ssquid:S2696ë"6Make the enclosing method "static" or remove this set.(ºÄ®úùÿÿÿÿ
+Nsquid:S2696ì"6Make the enclosing method "static" or remove this set.(ÔÊßÉ
+Ssquid:S2696Š"6Make the enclosing method "static" or remove this set.(±ÔÃ¢ÿÿÿÿÿ
+Ssquid:S2696‹"6Make the enclosing method "static" or remove this set.(¬™°¿ûÿÿÿÿ
+`squid:HiddenFieldCheck‘"8Rename "min" which hides the field declared at line 213.(õø åøÿÿÿÿ
+ƒ"squid:ClassVariableVisibilityCheckÕ"OMake min a static final constant or non-public and provide accessors if needed.(ù©÷úÿÿÿÿ
+}"squid:ClassVariableVisibilityCheckÖ"OMake max a static final constant or non-public and provide accessors if needed.(ëø“ 
+"squid:ClassVariableVisibilityCheck×"PMake minM a static final constant or non-public and provide accessors if needed.(Üª™
+„"squid:ClassVariableVisibilityCheckØ"PMake maxM a static final constant or non-public and provide accessors if needed.(á›ˆ³şÿÿÿÿ
+— squid:MethodCyclomaticComplexityX"kThe Cyclomatic Complexity of this method "FirstNotRepeatingChar" is 11 which is greater than 10 authorized.(ĞãÑ–
+ squid:MethodCyclomaticComplexityÙ"\The Cyclomatic Complexity of this method "Insert" is 16 which is greater than 10 authorized.(¤Ôáıÿÿÿÿ
+ squid:MethodCyclomaticComplexityè"cThe Cyclomatic Complexity of this method "mergeTwoLists" is 13 which is greater than 10 authorized.(§£€í
+>squid:S1481"'Remove this unused "as" local variable.(ÁŒéŠ
+?squid:S1481¸"'Remove this unused "al" local variable.(ÚİÚô
+?squid:S1481½"'Remove this unused "al" local variable.(ÆÙ‘…
+>squid:S1481"&Remove this unused "a" local variable.(—àÚ¶
+esquid:S00100J"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿø·"
+fsquid:S00100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞãÑ–
+fsquid:S00100p"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÜãÄ
+gsquid:S00100†"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Êÿ£
+lsquid:S00100™"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ª£Ğüÿÿÿÿ
+lsquid:S00100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Şœã”ÿÿÿÿÿ
+fsquid:S00100Ä"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô½¹f
+lsquid:S00100Ù"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Ôáıÿÿÿÿ
+gsquid:S00100‰"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ¢Éú
+gsquid:S00100“"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òû™
+lsquid:S00100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øéøÿÿÿÿ
+Nsquid:S1854¸"6Remove this useless assignment to local variable "al".(ÚİÚô
+Nsquid:S1854½"6Remove this useless assignment to local variable "al".(ÆÙ‘…
+:squid:S2386Õ"Make this member "protected".(ù©÷úÿÿÿÿ
+4squid:S2386Ö"Make this member "protected".(ëø“ 
+tsquid:S00117’"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¡ôŞûÿÿÿÿ
+osquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(°§š³
+lsquid:S00122B"TAt most one statement is allowed per line, but 2 statements were found on this line.(œª¯‚
+qsquid:S001223"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾ƒˆ¦øÿÿÿÿ
+lsquid:S00122j"TAt most one statement is allowed per line, but 3 statements were found on this line.(ÖíÍ°
+qsquid:S00122m"TAt most one statement is allowed per line, but 2 statements were found on this line.(×®ÉÁıÿÿÿÿ
+qsquid:S00122Y"TAt most one statement is allowed per line, but 2 statements were found on this line.(ù¬óôÿÿÿÿÿ
+qsquid:S00122q"TAt most one statement is allowed per line, but 2 statements were found on this line.(İÛÈêşÿÿÿÿ
+ksquid:S00122}"TAt most one statement is allowed per line, but 2 statements were found on this line.(æ×Èr
+rsquid:S00122ˆ"TAt most one statement is allowed per line, but 2 statements were found on this line.(ŒÀáÿÿÿÿÿ
+rsquid:S00122“"TAt most one statement is allowed per line, but 2 statements were found on this line.(Æé³¶ûÿÿÿÿ
+rsquid:S00122”"TAt most one statement is allowed per line, but 2 statements were found on this line.(ç¡´ûúÿÿÿÿ
+rsquid:S00122•"TAt most one statement is allowed per line, but 2 statements were found on this line.(Ã”Û§ùÿÿÿÿ
+rsquid:S00122›"TAt most one statement is allowed per line, but 2 statements were found on this line.(ñÆÄşùÿÿÿÿ
+rsquid:S00122ë"TAt most one statement is allowed per line, but 3 statements were found on this line.(ºÄ®úùÿÿÿÿ
+msquid:S00122ì"TAt most one statement is allowed per line, but 3 statements were found on this line.(ÔÊßÉ
+rsquid:S00122Š"TAt most one statement is allowed per line, but 3 statements were found on this line.(±ÔÃ¢ÿÿÿÿÿ
+rsquid:S00122‹"TAt most one statement is allowed per line, but 3 statements were found on this line.(¬™°¿ûÿÿÿÿ
+rsquid:S00122”"TAt most one statement is allowed per line, but 2 statements were found on this line.(íÙû¹øÿÿÿÿ
+msquid:S00122µ"TAt most one statement is allowed per line, but 2 statements were found on this line.(·ª¸…
+msquid:S00122¶"TAt most one statement is allowed per line, but 2 statements were found on this line.(öá©Ü
+msquid:S00122·"TAt most one statement is allowed per line, but 2 statements were found on this line.(ı”Ù¹
+wsquid:UselessImportCheck"NRemove this unused import 'com.sun.corba.se.impl.encoding.OSFCodeSetRegistry'.(°Š ÿÿÿÿÿ
+Ssquid:UselessImportCheck"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ
+|squid:S1149Ÿ"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ğĞ–™ıÿÿÿÿ
+|squid:S1149¦"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(–øãÚùÿÿÿÿ
+wsquid:S1149•"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+Usquid:S1155B">Use isEmpty() to check whether the collection is empty or not.(œª¯‚
+[squid:S1155Ú">Use isEmpty() to check whether the collection is empty or not.(Ğñø­ÿÿÿÿÿ
+[squid:S1155Ú">Use isEmpty() to check whether the collection is empty or not.(Ğñø­ÿÿÿÿÿ
+[squid:S1155Û">Use isEmpty() to check whether the collection is empty or not.(ªÊôøÿÿÿÿ
+[squid:S1155ß">Use isEmpty() to check whether the collection is empty or not.(•ì¬Ûşÿÿÿÿ
+[squid:S1155ë">Use isEmpty() to check whether the collection is empty or not.(ºÄ®úùÿÿÿÿ
+Vsquid:S1155ì">Use isEmpty() to check whether the collection is empty or not.(ÔÊßÉ
+[squid:S1155Š">Use isEmpty() to check whether the collection is empty or not.(±ÔÃ¢ÿÿÿÿÿ
+[squid:S1155‹">Use isEmpty() to check whether the collection is empty or not.(¬™°¿ûÿÿÿÿ

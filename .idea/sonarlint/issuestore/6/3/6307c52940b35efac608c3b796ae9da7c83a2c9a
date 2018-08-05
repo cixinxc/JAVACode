@@ -1,0 +1,42 @@
+
+Xsquid:S1191"<Replace this usage of Sun classes by ones from the Java API.(ÿ“éóşÿÿÿÿ
+R
+squid:S106¯";Replace this usage of System.out or System.err by a logger.(¶Ñ‘´
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(àªÅö
+wsquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+\squid:S2184³"DCast one of the operands of this substraction operation to a "long".(ì²ä
+>squid:UndocumentedApi"Document this public method.(¹·Õ«
+>squid:UndocumentedApi¤"Document this public method.( ¿Ú©
+Vsquid:S1226¾">Introduce a new variable instead of reusing the parameter "n".(÷Å“´
+Csquid:S1172¡"+Remove this unused method parameter "args".(æ¸×¦
+… squid:ForLoopCounterChangedCheck—"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
+R
+squid:S106³";Replace this usage of System.out or System.err by a logger.(ì²ä
+osquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(°§š³
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Çµí‘
+Q
+squid:S106®";Replace this usage of System.out or System.err by a logger.(œ»Ó&
+W
+squid:S106Ÿ";Replace this usage of System.out or System.err by a logger.(µ°×åúÿÿÿÿ
+Csquid:UndocumentedApiò"Document this public method.(üÎÆıÿÿÿÿ
+>squid:UndocumentedApi¬"Document this public method.(Çµí‘
+Csquid:UndocumentedApi¸"Document this public method.(¶©¢¯üÿÿÿÿ
+\squid:UselessImportCheck"3Remove this unused import 'sun.nio.cs.ext.MacThai'.(ÿ“éóşÿÿÿÿ
+bsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(Çµí‘
+Hsquid:S1172ò"+Remove this unused method parameter "args".(üÎÆıÿÿÿÿ
+Bsquid:S1481¥"*Remove this unused "total" local variable.(ÂòÃğ
+R
+squid:S106µ";Replace this usage of System.out or System.err by a logger.(À˜ğŞ
+W
+squid:S106±";Replace this usage of System.out or System.err by a logger.(¬Ïûÿÿÿÿ
+R
+squid:S106¢";Replace this usage of System.out or System.err by a logger.(Ó™é²
+Csquid:S1172"+Remove this unused method parameter "args".(¹·Õ«
+Qsquid:S1854¥"9Remove this useless assignment to local variable "total".(ÂòÃğ
+>squid:UndocumentedApi¡"Document this public method.(æ¸×¦
+Gsquid:S00108‰")Either remove or fill this block of code.(¬¥®øøÿÿÿÿ
+isquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(Çµí‘8¤°ÃµÎ,
+isquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(Çµí‘8¤°ÃµÎ,
+isquid:CommentedOutCodeLine}"<This block of commented-out lines of code should be removed.(Çµí‘8¤°ÃµÎ,
+jsquid:CommentedOutCodeLine§"<This block of commented-out lines of code should be removed.(Çµí‘8¤°ÃµÎ,
+jsquid:CommentedOutCodeLineÍ"<This block of commented-out lines of code should be removed.(Çµí‘8¤°ÃµÎ,

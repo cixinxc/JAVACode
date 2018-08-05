@@ -1,0 +1,349 @@
+
+]squid:S1226á">Introduce a new variable instead of reusing the parameter "s".(Æûç«8ÎÈ‹®Î,
+Dsquid:S1481"'Remove this unused "ns" local variable.(³å¦<8ÎÈ‹®Î,
+Hsquid:S00108¯")Either remove or fill this block of code.(ÀËº8ÎÈ‹®Î,
+ƒsquid:S1149¼"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(˜ì·‡ıÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApi¿"Document this public method.(Ÿ‹Ûøÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiÅ"Document this public method.(…¤âÁùÿÿÿÿ8ÎÈ‹®Î,
+Gsquid:S1481á"(Remove this unused "ret" local variable.(†ªÖ£8ÎÈ‹®Î,
+asquid:S2583Ğ	"CChange this condition so that it does not always evaluate to "true"(ûÓ­$8ÎÈ‹®Î,
+Msquid:S1125È")Remove the literal "false" boolean value.(¨Ú¬°ûÿÿÿÿ8ÎÈ‹®Î,
+Zsquid:S1854â"6Remove this useless assignment to local variable "st".(ÄÄ¼úÿÿÿÿ8ÎÈ‹®Î,
+Œ squid:ForLoopCounterChangedCheckÒ	"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8ÎÈ‹®Î,
+ƒsquid:S1149¯	"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(âãµ´ûÿÿÿÿ8ÎÈ‹®Î,
+Isquid:S1659Å	"%Declare "length2" on a separate line.( øâ¾øÿÿÿÿ8ÎÈ‹®Î,
+jsquid:CommentedOutCodeLine›"<This block of commented-out lines of code should be removed.(˜î‚8ÎÈ‹®Î,
+Gsquid:S1172ü"(Remove this unused method parameter "s".(í†Œù8ÎÈ‹®Î,
+Esquid:UndocumentedApiØ"Document this public method.(Ó×«Õ8ÎÈ‹®Î,
+Dsquid:S1659Ä" Declare "ll" on a separate line.(–›Ÿ¦ıÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117£"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Îºøÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117£"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êîÈÇøÿÿÿÿ8ÎÈ‹®Î,
+Tsquid:S1854­"6Remove this useless assignment to local variable "cs".(­Ù¨f8ÎÈ‹®Î,
+xsquid:S00122^"TAt most one statement is allowed per line, but 2 statements were found on this line.(õ…Éúÿÿÿÿ8ÎÈ‹®Î,
+Usquid:S1213‘
+"8Move this variable to comply with Java Code Conventions.(ö²ëàÿÿÿÿÿ
+Esquid:S1659µ"!Declare "den" on a separate line.(¸ñÕ®úÿÿÿÿ8ÎÈ‹®Î,
+asquid:HiddenFieldCheck¶
+"9Rename "ret" which hides the field declared at line 1297.(‰Á©ıÿÿÿÿ
+Jsquid:UndocumentedApiß"Document this public method.(ô²ìäúÿÿÿÿ8ÎÈ‹®Î,
+jsquid:S1132‡	"FMove the "" string literal on the left side of this string comparison.(Šëí“şÿÿÿÿ8ÎÈ‹®Î,
+Csquid:S2131Ü"Use "Integer.toString" instead.(ıîúºıÿÿÿÿ8ÎÈ‹®Î,
+ squid:MethodCyclomaticComplexityë"iThe Cyclomatic Complexity of this method "longestCommonPrefix" is 11 which is greater than 10 authorized.(ûÕ‘Ñ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiÃ"Document this public method.(åòÎÿÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiä	"(Document the parameter(s): target, start(ŒÔ‰
+hsquid:S2583"DChange this condition so that it does not always evaluate to "false"(€»è™ùÿÿÿÿ8ÎÈ‹®Î,
+Dsquid:UndocumentedApi›"Document this public method.(¯”¤Q8ÎÈ‹®Î,
+[squid:S1854"7Remove this useless assignment to local variable "ls2".(¯±È‘ıÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106â";Replace this usage of System.out or System.err by a logger.(àŞëùÿÿÿÿ8ÎÈ‹®Î,
+Isquid:S00108ô")Either remove or fill this block of code.(àáş8ÎÈ‹®Î,
+esquid:HiddenFieldCheckâ"6Rename "s" which hides the field declared at line 576.(ı—Ş¦ıÿÿÿÿ8ÎÈ‹®Î,
+Csquid:UndocumentedApiµ
+"Document this public method.(ğë¡ˆşÿÿÿÿ
+osquid:S00104"_This file has 1,431 lines, which is greater than 1,000 authorized. Split it into smaller files.
+Wsquid:S1213ä"8Move this variable to comply with Java Code Conventions.(¢¼È“8ÎÈ‹®Î,
+Jsquid:UndocumentedApi€"Document this public method.(Ï„Ïšşÿÿÿÿ8ÎÈ‹®Î,
+“ squid:MethodCyclomaticComplexityŞ
+"fThe Cyclomatic Complexity of this method "threeSumClosests" is 21 which is greater than 10 authorized.(„•ü›
+Dsquid:S1659À" Declare "lh" on a separate line.(ƒıÊÎıÿÿÿÿ8ÎÈ‹®Î,
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(¯µƒ
+Esquid:UndocumentedApiª"Document this public method.(ÄãÄ8ÎÈ‹®Î,
+jsquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(óôû“8ÎÈ‹®Î,
+ssquid:S00122h"TAt most one statement is allowed per line, but 2 statements were found on this line.(ÇÜÚ½8ÎÈ‹®Î,
+ysquid:S00122‡"TAt most one statement is allowed per line, but 2 statements were found on this line.(ÃÛ“Èüÿÿÿÿ8ÎÈ‹®Î,
+– squid:MethodCyclomaticComplexityØ"]The Cyclomatic Complexity of this method "convert" is 16 which is greater than 10 authorized.(¡€ğûÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106Ÿ";Replace this usage of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8ÎÈ‹®Î,
+bsquid:S1226·">Introduce a new variable instead of reusing the parameter "k".(õƒ’ıÿÿÿÿ8ÎÈ‹®Î,
+Wsquid:UselessParenthesesCheck "!Remove those useless parentheses.(çÇÂÑÿÿÿÿÿ8ÎÈ‹®Î,
+tsquid:S00122ñ"TAt most one statement is allowed per line, but 2 statements were found on this line.(àó8ÎÈ‹®Î,
+bsquid:S1155…">Use isEmpty() to check whether the collection is empty or not.(ÍÁüÙøÿÿÿÿ8ÎÈ‹®Î,
+š squid:MethodCyclomaticComplexity¿"aThe Cyclomatic Complexity of this method "spiralOrder" is 15 which is greater than 10 authorized.(Ÿ‹Ûøÿÿÿÿ8ÎÈ‹®Î,
+Ksquid:S1604"(Make this anonymous inner class a lambda(ûè¿°şÿÿÿÿ8ÎÈ‹®Î,
+\squid:S1213¿"8Move this variable to comply with Java Code Conventions.(Êõ«Ùşÿÿÿÿ8ÎÈ‹®Î,
+Esquid:UndocumentedApiì"Document this public method.(Ñù£–8ÎÈ‹®Î,
+]squid:S1155û">Use isEmpty() to check whether the collection is empty or not.(€Íşº8ÎÈ‹®Î,
+isquid:CommentedOutCodeLinei"<This block of commented-out lines of code should be removed.(‡Öƒá8ÎÈ‹®Î,
+csquid:HiddenFieldCheck•"9Rename "ret" which hides the field declared at line 1297.(†ªÖ£8ÎÈ‹®Î,
+Dsquid:UndocumentedApi"Document this public method.(Çµí‘8ÎÈ‹®Î,
+Ÿsquid:S1186!"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜¿’É8ÎÈ‹®Î,
+e
+squid:S134‹"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(áÍŸá
+Ÿ squid:MethodCyclomaticComplexityó"fThe Cyclomatic Complexity of this method "detectCapitalUse" is 15 which is greater than 10 authorized.(‘™¥óıÿÿÿÿ8ÎÈ‹®Î,
+bsquid:S1226Ğ">Introduce a new variable instead of reusing the parameter "k".(õƒ’ıÿÿÿÿ8ÎÈ‹®Î,
+msquid:S1609="JAnnotate the "MyLambda" interface with the @FunctionalInterface annotation(ŸŸÈ¤ùÿÿÿÿ8ÎÈ‹®Î,
+ssquid:S00122†"TAt most one statement is allowed per line, but 2 statements were found on this line.(†v8ÎÈ‹®Î,
+]
+squid:S106";Replace this usage of System.out or System.err by a logger.(‡˜ßÎÿÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106»";Replace this usage of System.out or System.err by a logger.(µÁ­©ÿÿÿÿÿ8ÎÈ‹®Î,
+Gsquid:S1125{")Remove the literal "false" boolean value.(é†¼8ÎÈ‹®Î,
+Y
+squid:S106÷";Replace this usage of System.out or System.err by a logger.(şıåÑ8ÎÈ‹®Î,
+hsquid:HiddenFieldCheck "9Rename "ret" which hides the field declared at line 1297.(‰Á©ıÿÿÿÿ8ÎÈ‹®Î,
+isquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.( ¬è8ÎÈ‹®Î,
+>squid:S2131"Use "Integer.toString" instead.(…×Û¸8ÎÈ‹®Î,
+tsquid:S00122æ"TAt most one statement is allowed per line, but 2 statements were found on this line.(òÅÍÍ8ÎÈ‹®Î,
+^
+squid:S106Ô";Replace this usage of System.out or System.err by a logger.(ÊÆÄŒÿÿÿÿÿ8ÎÈ‹®Î,
+xsquid:S00122m"TAt most one statement is allowed per line, but 2 statements were found on this line.(ğ£Šùÿÿÿÿ8ÎÈ‹®Î,
+Esquid:UndocumentedApi³"Document this public method.(†‡ÍÜ8ÎÈ‹®Î,
+Fsquid:S1604!"(Make this anonymous inner class a lambda(˜¿’É8ÎÈ‹®Î,
+~squid:S1067æ"ZReduce the number of conditional operators (6) used in the expression (maximum allowed 3).(¬©±ıÿÿÿÿ8ÎÈ‹®Î,
+}squid:S2293Ù"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÀåæÈùÿÿÿÿ8ÎÈ‹®Î,
+Hsquid:UndocumentedApi"Document this public class.(æÌ†Ãşÿÿÿÿ8ÎÈ‹®Î,
+xsquid:S00122s"TAt most one statement is allowed per line, but 2 statements were found on this line.(—ç×Éúÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApi‹"Document this public method.(Åù ÷ıÿÿÿÿ8ÎÈ‹®Î,
+ssquid:S00122Y"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Š”Ã8ÎÈ‹®Î,
+_squid:S1226ƒ"AIntroduce a new variable instead of reusing the parameter "num2".(àŒÕ.8ÎÈ‹®Î,
+Esquid:UndocumentedApiŸ"Document this public method.(ÔóÏš8ÎÈ‹®Î,
+{squid:S00117‹"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åù ÷ıÿÿÿÿ8ÎÈ‹®Î,
+hsquid:HiddenFieldCheck¼"9Rename "ret" which hides the field declared at line 1297.(˜ì·‡ıÿÿÿÿ8ÎÈ‹®Î,
+Isquid:UndocumentedApi&"Document this public method.(£åÅûÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106…";Replace this usage of System.out or System.err by a logger.(Ó¤úÿÿÿÿÿ8ÎÈ‹®Î,
+]squid:S1226â">Introduce a new variable instead of reusing the parameter "n".(ÍÎ·»8ÎÈ‹®Î,
+ squid:MethodCyclomaticComplexity¨"iThe Cyclomatic Complexity of this method "findClosestElements" is 13 which is greater than 10 authorized.(ü„÷ö8ÎÈ‹®Î,
+xsquid:S2293Á"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ê±Ïş8ÎÈ‹®Î,
+l
+squid:S134©"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(Åïğ½8ÎÈ‹®Î,
+› squid:MethodCyclomaticComplexity¨"gThe Cyclomatic Complexity of this method "fractionToDecimal" is 11 which is greater than 10 authorized.(¥¾›¤8ÎÈ‹®Î,
+xsquid:S00122U"TAt most one statement is allowed per line, but 2 statements were found on this line.(—ÍÙ©úÿÿÿÿ8ÎÈ‹®Î,
+Asquid:S1659£""Declare "set2" on a separate line.(Œ‹Î8ÎÈ‹®Î,
+‘ squid:ForLoopCounterChangedCheck×	"XRefactor the code in order to not assign to this loop counter from within the loop body.(­–„úÿÿÿÿ8ÎÈ‹®Î,
+Csquid:UndocumentedApiø	"Document this public method.(“®öÃşÿÿÿÿ
+Asquid:S1659Õ""Declare "high" on a separate line.(‘´Èƒ8ÎÈ‹®Î,
+=squid:S1659ã
+"%Declare "hiCount" on a separate line.(•îª
+\squid:S1213å"8Move this variable to comply with Java Code Conventions.(æñ®•ıÿÿÿÿ8ÎÈ‹®Î,
+Bsquid:S00108")Either remove or fill this block of code.(ÛÄ­å
+u
+squid:S135î
+"YReduce the total number of break and continue statements in this loop to use at most one.(µìÅ‡ÿÿÿÿÿ
+Y
+squid:S106•";Replace this usage of System.out or System.err by a logger.(Ìïö£8ÎÈ‹®Î,
+Y
+squid:S106î";Replace this usage of System.out or System.err by a logger.(€ÉéŸ8ÎÈ‹®Î,
+Vsquid:S1213À"8Move this variable to comply with Java Code Conventions.(¯ê½m8ÎÈ‹®Î,
+Jsquid:UndocumentedApi‹"Document this public method.(•™»ùøÿÿÿÿ8ÎÈ‹®Î,
+hsquid:S1858ö"D"r" is already a string, there's no need to call "toString()" on it.(³ÖıÉÿÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106";Replace this usage of System.out or System.err by a logger.(¬Úˆûÿÿÿÿ8ÎÈ‹®Î,
+esquid:S1132ç"FMove the "" string literal on the left side of this string comparison.(Ê“·ì8ÎÈ‹®Î,
+– squid:MethodCyclomaticComplexity@"cThe Cyclomatic Complexity of this method "numDecodings2" is 29 which is greater than 10 authorized.(µ­ıÔ8ÎÈ‹®Î,
+Esquid:UndocumentedApië"Document this public method.(ûÕ‘Ñ8ÎÈ‹®Î,
+hsquid:HiddenFieldCheckŒ"9Rename "ret" which hides the field declared at line 1297.(‰Á©ıÿÿÿÿ8ÎÈ‹®Î,
+‘ squid:ForLoopCounterChangedCheck "XRefactor the code in order to not assign to this loop counter from within the loop body.( æƒ«ıÿÿÿÿ8ÎÈ‹®Î,
+csquid:HiddenFieldCheckÚ"9Rename "ret" which hides the field declared at line 1297.(´¼Æ’8ÎÈ‹®Î,
+squid:S1488 "[Immediately return this expression instead of assigning it to the temporary variable "ret".(‰Á©ıÿÿÿÿ8ÎÈ‹®Î,
+Lsquid:S1172Ÿ"(Remove this unused method parameter "s".(ÊšÒÍúÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiƒ"Document this public method.(µ­““ıÿÿÿÿ8ÎÈ‹®Î,
+Dsquid:S1659Ç" Declare "lj" on a separate line.(ä¸¢Èüÿÿÿÿ8ÎÈ‹®Î,
+Bsquid:S1659³"#Declare "right" on a separate line.(³ÿ à8ÎÈ‹®Î,
+Gsquid:S00108‹
+")Either remove or fill this block of code.(Å„‰äüÿÿÿÿ
+@squid:S1643Ï"Use a StringBuilder instead.(ø¦êÇøÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApi£"Document this public method.(†Îºøÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiÎ"Document this public method.(€“¸úÿÿÿÿ8ÎÈ‹®Î,
+Csquid:UndocumentedApi‰
+"Document this public method.(ŞáÉŠıÿÿÿÿ
+Jsquid:UndocumentedApi…"Document this public method.(òâ¶…øÿÿÿÿ8ÎÈ‹®Î,
+csquid:HiddenFieldCheck¤"9Rename "ret" which hides the field declared at line 1297.(†ªÖ£8ÎÈ‹®Î,
+_squid:S1226†"AIntroduce a new variable instead of reusing the parameter "num1".(ß§ÂT8ÎÈ‹®Î,
+Isquid:S1481¦"*Remove this unused "index" local variable.(—šò8ÎÈ‹®Î,
+Zsquid:S1854"<Remove this useless assignment to local variable "runnable".(´½É˜8ÎÈ‹®Î,
+xsquid:S00122w"TAt most one statement is allowed per line, but 2 statements were found on this line.(íé¦èùÿÿÿÿ8ÎÈ‹®Î,
+Gsquid:S1172‰
+"*Remove this unused method parameter "sum".(ŞáÉŠıÿÿÿÿ
+9squid:S1659ÿ
+""Declare "high" on a separate line.(àã:
+e
+squid:S134ˆ"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(œ‘¤ù
+Jsquid:UndocumentedApiÙ"Document this public method.(´Ô¬äøÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106¡";Replace this usage of System.out or System.err by a logger.(¬Ô¿¦ûÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117£"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Îºøÿÿÿÿ8ÎÈ‹®Î,
+Œ squid:ForLoopCounterChangedCheckÕ	"XRefactor the code in order to not assign to this loop counter from within the loop body.(¯ÀÚè8ÎÈ‹®Î,
+?squid:S1659À" Declare "rd" on a separate line.(ö°Ñÿ8ÎÈ‹®Î,
+Esquid:UndocumentedApiæ"Document this public method.(ÏÅŸÖ8ÎÈ‹®Î,
+Ÿsquid:S1186."€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÁÊªØ8ÎÈ‹®Î,
+Esquid:UndocumentedApií"Document this public method.(•¸“á8ÎÈ‹®Î,
+_squid:S1226"@Introduce a new variable instead of reusing the parameter "num".(¤ÉÛŒ8ÎÈ‹®Î,
+osquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ù–‡í
+Jsquid:UndocumentedApiØ"Document this public method.(¡€ğûÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApi–"Document this public method.(İòåªşÿÿÿÿ8ÎÈ‹®Î,
+tsquid:S00122Ê"TAt most one statement is allowed per line, but 7 statements were found on this line.(Ü»”“8ÎÈ‹®Î,
+Ksquid:S1481"-Remove this unused "runnable" local variable.(´½É˜8ÎÈ‹®Î,
+jsquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(ˆı™ñ8ÎÈ‹®Î,
+~squid:S1067ú"ZReduce the number of conditional operators (5) used in the expression (maximum allowed 3).(¦Ú´ˆıÿÿÿÿ8ÎÈ‹®Î,
+Esquid:UndocumentedApiÔ"Document this public method.(µàËú8ÎÈ‹®Î,
+Jsquid:UndocumentedApi£"Document this public method.(êîÈÇøÿÿÿÿ8ÎÈ‹®Î,
+csquid:HiddenFieldCheckù"9Rename "ret" which hides the field declared at line 1297.(†ªÖ£8ÎÈ‹®Î,
+Ssquid:S1854"6Remove this useless assignment to local variable "ns".(³å¦<8ÎÈ‹®Î,
+Esquid:UndocumentedApiÜ"Document this public method.(ÈìäØ8ÎÈ‹®Î,
+dsquid:S1226À"@Introduce a new variable instead of reusing the parameter "num".(¦Œª¹ıÿÿÿÿ8ÎÈ‹®Î,
+d
+squid:S134Ã
+"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(šœ”:
+Vsquid:S1155
+">Use isEmpty() to check whether the collection is empty or not.(ŸíÕ§
+squid:S1488ı"[Immediately return this expression instead of assigning it to the temporary variable "max".(™“œĞıÿÿÿÿ8ÎÈ‹®Î,
+Osquid:S1172Á"+Remove this unused method parameter "root".(±‘à€üÿÿÿÿ8ÎÈ‹®Î,
+Vsquid:S1854á"7Remove this useless assignment to local variable "ret".(†ªÖ£8ÎÈ‹®Î,
+tsquid:S00122ˆ"TAt most one statement is allowed per line, but 2 statements were found on this line.(¬ÂÓ8ÎÈ‹®Î,
+Œ squid:ForLoopCounterChangedCheck£"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8ÎÈ‹®Î,
+}squid:S1067]"ZReduce the number of conditional operators (5) used in the expression (maximum allowed 3).(ãÏµ±ıÿÿÿÿ8ÎÈ‹®Î,
+isquid:CommentedOutCodeLine˜	"<This block of commented-out lines of code should be removed.(Ê‰y8ÎÈ‹®Î,
+\squid:S1226¥">Introduce a new variable instead of reusing the parameter "A".(ÄÍÄP8ÎÈ‹®Î,
+ssquid:S00100¥"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì×¯æşÿÿÿÿ8ÎÈ‹®Î,
+isquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(‡Öƒá8ÎÈ‹®Î,
+9squid:S1659
+"!Declare "end" on a separate line.(ÒÕƒÖ
+j
+squid:S134Ğ
+"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ê¶öæıÿÿÿÿ
+Dsquid:UndocumentedApi@"Document this public method.(µ­ıÔ8ÎÈ‹®Î,
+csquid:HiddenFieldChecká"9Rename "ret" which hides the field declared at line 1297.(†ªÖ£8ÎÈ‹®Î,
+~squid:S1149š"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰8ÎÈ‹®Î,
+Xsquid:S1854¦"9Remove this useless assignment to local variable "index".(—šò8ÎÈ‹®Î,
+\squid:S1854³"8Remove this useless assignment to local variable "temp".(ºØ‰Äûÿÿÿÿ8ÎÈ‹®Î,
+Esquid:S2131¯	"!Use "Character.toString" instead.(âãµ´ûÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117‹"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åù ÷ıÿÿÿÿ8ÎÈ‹®Î,
+Xsquid:S1854³	"9Remove this useless assignment to local variable "start".(ªÛÅË8ÎÈ‹®Î,
+fsquid:S1132ç"GMove the "0" string literal on the left side of this string comparison.( Îúâ8ÎÈ‹®Î,
+Esquid:UndocumentedApiú"Document this public method.(•¢œÒ8ÎÈ‹®Î,
+e
+squid:S134…"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ßÑ‹½
+Wsquid:S1213Â"8Move this variable to comply with Java Code Conventions.(ÛºŠê8ÎÈ‹®Î,
+Tsquid:S1854"5Remove this useless assignment to local variable "r".(ß‚Ã8ÎÈ‹®Î,
+Dsquid:UndocumentedApiÅ"Document this public method.(Šµ²
+8ÎÈ‹®Î,
+>squid:UndocumentedApiœ
+"Document this public method.(ñıøØ
+e
+squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ÛÄ­å
+Esquid:UndocumentedApi¤"Document this public method.(Šœ±ö8ÎÈ‹®Î,
+ysquid:S1067å"ZReduce the number of conditional operators (5) used in the expression (maximum allowed 3).(öÙòÀ8ÎÈ‹®Î,
+esquid:S2184œ"FCast one of the operands of this substraction operation to a "double".(“¯Ø™8ÎÈ‹®Î,
+Dsquid:UndocumentedApi·"Document this public method.(™Â8ÎÈ‹®Î,
+— squid:MethodCyclomaticComplexityß"^The Cyclomatic Complexity of this method "findLeft" is 16 which is greater than 10 authorized.(ô²ìäúÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiú"Document this public method.(™èâ¤ùÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117‹"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åù ÷ıÿÿÿÿ8ÎÈ‹®Î,
+`squid:S1126€"AReplace this if-then-else statement by a single return statement.(ÊÃ ò8ÎÈ‹®Î,
+Esquid:UndocumentedApi"Document this public method.(¼×ŸŠ8ÎÈ‹®Î,
+hsquid:CommentedOutCodeLineÇ
+"<This block of commented-out lines of code should be removed.(œîöşÿÿÿÿ
+esquid:S2184"FCast one of the operands of this substraction operation to a "double".(¤ÉÛŒ8ÎÈ‹®Î,
+^
+squid:S106Ï";Replace this usage of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8ÎÈ‹®Î,
+q
+squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(€»è™ùÿÿÿÿ8ÎÈ‹®Î,
+Csquid:S2131Ü"Use "Integer.toString" instead.(ıîúºıÿÿÿÿ8ÎÈ‹®Î,
+jsquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(²şÕ8ÎÈ‹®Î,
+Y
+squid:S106¶";Replace this usage of System.out or System.err by a logger.(ïŸí¹8ÎÈ‹®Î,
+Dsquid:UndocumentedApià"Document this public method.(¢ëÌ"8ÎÈ‹®Î,
+hsquid:HiddenFieldCheckÙ"9Rename "ret" which hides the field declared at line 1297.(‰Á©ıÿÿÿÿ8ÎÈ‹®Î,
+qsquid:S2293 
+"YReplace the type specification in this constructor call with the diamond operator ("<>").(è¿ºš
+W
+squid:S106";Replace this usage of System.out or System.err by a logger.(×Ë8ÎÈ‹®Î,
+‹ squid:ForLoopCounterChangedCheckº"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK8ÎÈ‹®Î,
+Nsquid:S00108·")Either remove or fill this block of code.(òÔ’«ıÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106Î";Replace this usage of System.out or System.err by a logger.(ûªñııÿÿÿÿ8ÎÈ‹®Î,
+Esquid:UndocumentedApi¨"Document this public method.(ü„÷ö8ÎÈ‹®Î,
+[squid:S1854‰"7Remove this useless assignment to local variable "sum".(©ŒºÉûÿÿÿÿ8ÎÈ‹®Î,
+Zsquid:S1854­"6Remove this useless assignment to local variable "en".(Æô°÷ıÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106®	";Replace this usage of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8ÎÈ‹®Î,
+@squid:S1659¦"!Declare "len" on a separate line.(àÀ×ï8ÎÈ‹®Î,
+Bsquid:UndocumentedApi"Document this public method.(œò€òøÿÿÿÿ
+‘ squid:MethodCyclomaticComplexityì"]The Cyclomatic Complexity of this method "isValid" is 20 which is greater than 10 authorized.(Ñù£–8ÎÈ‹®Î,
+dsquid:S1226’"@Introduce a new variable instead of reusing the parameter "num".(Ô“¼ûÿÿÿÿ8ÎÈ‹®Î,
+dsquid:S1226×"@Introduce a new variable instead of reusing the parameter "num".(‚„øÿÿÿÿÿ8ÎÈ‹®Î,
+=squid:S1659ğ
+" Declare "hi" on a separate line.(½Õ©Òùÿÿÿÿ
+^
+squid:S106‘";Replace this usage of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiÁ"Document this public method.(±‘à€üÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117–"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İòåªşÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiŒ"Document this public method.(å–÷¿ûÿÿÿÿ8ÎÈ‹®Î,
+dsquid:S1226Ô"@Introduce a new variable instead of reusing the parameter "num".(î¶¨úÿÿÿÿ8ÎÈ‹®Î,
+Bsquid:S00108ˆ")Either remove or fill this block of code.(œ‘¤ù
+bsquid:S1155÷">Use isEmpty() to check whether the collection is empty or not.(×ÉÑ¦ûÿÿÿÿ8ÎÈ‹®Î,
+Jsquid:UndocumentedApiŸ"Document this public method.(ÊšÒÍúÿÿÿÿ8ÎÈ‹®Î,
+Œ squid:ForLoopCounterChangedCheckË	"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8ÎÈ‹®Î,
+Jsquid:UndocumentedApi–"Document this public method.(ÚÊÀŞşÿÿÿÿ8ÎÈ‹®Î,
+{squid:S00117£"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êîÈÇøÿÿÿÿ8ÎÈ‹®Î,
+csquid:HiddenFieldCheckŞ"9Rename "ret" which hides the field declared at line 1297.(ÜÂØ8ÎÈ‹®Î,
+{squid:S00117‹"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åù ÷ıÿÿÿÿ8ÎÈ‹®Î,
+[squid:S1854—"7Remove this useless assignment to local variable "mul".(£ĞÁĞıÿÿÿÿ8ÎÈ‹®Î,
+tsquid:S00122‡"TAt most one statement is allowed per line, but 2 statements were found on this line.(ÆÄŠñ8ÎÈ‹®Î,
+\squid:S2130Ü"8Use "Long.parseLong" for this string-to-long conversion.(ıîúºıÿÿÿÿ8ÎÈ‹®Î,
+<squid:S1659¿
+"Declare "r" on a separate line.(¬Íñúÿÿÿÿ
+Tsquid:S1854¶
+"7Remove this useless assignment to local variable "ret".(‰Á©ıÿÿÿÿ
+Dsquid:UndocumentedApiÄ"Document this public method.(¢Œ¨F8ÎÈ‹®Î,
+|
+squid:S135Ê"YReduce the total number of break and continue statements in this loop to use at most one.(½–óôûÿÿÿÿ8ÎÈ‹®Î,
+Œ squid:ForLoopCounterChangedCheckÎ	"XRefactor the code in order to not assign to this loop counter from within the loop body.(¯ÀÚè8ÎÈ‹®Î,
+[squid:S2259Æ"<NullPointerException might be thrown as 's' is nullable here(ØÚŸÇ8ÎÈ‹®Î,
+hsquid:HiddenFieldCheckË"9Rename "ret" which hides the field declared at line 1297.(‰Á©ıÿÿÿÿ8ÎÈ‹®Î,
+Dsquid:UndocumentedApi'"Document this public method.(üÒš¥8ÎÈ‹®Î,
+squid:S1132Ú"]Move the ", , , ,        a, eaefa" string literal on the left side of this string comparison.(…¶‹ˆüÿÿÿÿ8ÎÈ‹®Î,
+Lsquid:UndocumentedApi%"Document this public interface.(²®ï«ÿÿÿÿÿ8ÎÈ‹®Î,
+Q
+squid:S106";Replace this usage of System.out or System.err by a logger.(Üß¨º
+Dsquid:UndocumentedApi9"Document this public method.(ÿõÏı8ÎÈ‹®Î,
+squid:S1845Ó"iRename method "subSets" to prevent any misunderstanding/clash with method "subsets" defined on line 1092.(äæÓ¶øÿÿÿÿ8ÎÈ‹®Î,
+ssquid:S00122L"TAt most one statement is allowed per line, but 2 statements were found on this line.(‡œ¯Õ8ÎÈ‹®Î,
+=squid:UndocumentedApi’
+"Document this public method.(¨¯÷L
+tsquid:S00122Ü"TAt most one statement is allowed per line, but 2 statements were found on this line.(ÁÅğ8ÎÈ‹®Î,
+^
+squid:S106Ù";Replace this usage of System.out or System.err by a logger.(¸ÚŠ²ÿÿÿÿÿ8ÎÈ‹®Î,
+ssquid:S1132İ"TMove the "......avv123go" string literal on the left side of this string comparison.(¢†ŞÛ8ÎÈ‹®Î,
+R
+squid:S106í	";Replace this usage of System.out or System.err by a logger.(ê–ˆØ
+l
+squid:S134û"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(€Íşº8ÎÈ‹®Î,
+Ÿsquid:S11862"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(éÓ±Û8ÎÈ‹®Î,
+Œ squid:ForLoopCounterChangedCheckç"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ8ÎÈ‹®Î,
+— squid:MethodCyclomaticComplexityØ"cThe Cyclomatic Complexity of this method "countSegments" is 20 which is greater than 10 authorized.(Ó×«Õ8ÎÈ‹®Î,
+Esquid:UndocumentedApi¨"Document this public method.(¥¾›¤8ÎÈ‹®Î,
+vsquid:S2293‘
+"YReplace the type specification in this constructor call with the diamond operator ("<>").(ö²ëàÿÿÿÿÿ
+Jsquid:UndocumentedApió"Document this public method.(‘™¥óıÿÿÿÿ8ÎÈ‹®Î,
+;squid:S1643€"Use a StringBuilder instead.(Ó©šÁ8ÎÈ‹®Î,
+Y
+squid:S106Å";Replace this usage of System.out or System.err by a logger.(„©­¼8ÎÈ‹®Î,
+dsquid:S1226Ñ"@Introduce a new variable instead of reusing the parameter "num".(ËÃÕ…şÿÿÿÿ8ÎÈ‹®Î,
+bsquid:S1226Ê">Introduce a new variable instead of reusing the parameter "k".(õƒ’ıÿÿÿÿ8ÎÈ‹®Î,
+^
+squid:S106ã";Replace this usage of System.out or System.err by a logger.(·Ò¤Çùÿÿÿÿ8ÎÈ‹®Î,
+>squid:S2131¼"Use "Integer.toString" instead.(·öš”8ÎÈ‹®Î,
+ssquid:S00122c"TAt most one statement is allowed per line, but 2 statements were found on this line.(¿ã«ã8ÎÈ‹®Î,
+Jsquid:UndocumentedApi±"Document this public method.(Œ‚®öùÿÿÿÿ8ÎÈ‹®Î,
+Dsquid:UndocumentedApi>"Document this public method.(§„Ãğ8ÎÈ‹®Î,
+>squid:UndocumentedApiŞ
+"Document this public method.(„•ü›
+X
+squid:S106";Replace this usage of System.out or System.err by a logger.(ÑÑ…ç8ÎÈ‹®Î,
+]
+squid:S106";Replace this usage of System.out or System.err by a logger.(ÖÓãóùÿÿÿÿ8ÎÈ‹®Î,
+Xsquid:S1161!":Add the "@Override" annotation above this method signature(˜¿’É8ÎÈ‹®Î,
+Y
+squid:S106„";Replace this usage of System.out or System.err by a logger.(©ğŠ•8ÎÈ‹®Î,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ñ¼ä‰8ÎÈ‹®Î,
+@squid:S2131±	"!Use "Character.toString" instead.(ùæ8ÎÈ‹®Î,
+Y
+squid:S106æ";Replace this usage of System.out or System.err by a logger.(½ØÕı8ÎÈ‹®Î,
+^
+squid:S106¸";Replace this usage of System.out or System.err by a logger.(¶ÔÕ¸şÿÿÿÿ8ÎÈ‹®Î,
+\squid:S1213Ã"8Move this variable to comply with Java Code Conventions.(ïùÿÿÿÿÿ8ÎÈ‹®Î,
+Dsquid:UndocumentedApi×"Document this public method.(ï‘ÑO8ÎÈ‹®Î,
+csquid:S2583õ"DChange this condition so that it does not always evaluate to "false"(Ø±Ã8ÎÈ‹®Î,
+‹ squid:ForLoopCounterChangedCheck±"XRefactor the code in order to not assign to this loop counter from within the loop body.(¨…ÄK8ÎÈ‹®Î,
+˜ squid:MethodCyclomaticComplexityú"_The Cyclomatic Complexity of this method "findRight" is 16 which is greater than 10 authorized.(™èâ¤ùÿÿÿÿ8ÎÈ‹®Î,

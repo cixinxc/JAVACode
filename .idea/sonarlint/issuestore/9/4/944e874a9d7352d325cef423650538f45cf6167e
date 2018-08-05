@@ -1,0 +1,13 @@
+
+osquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ù–‡í
+bsquid:CommentedOutCodeLine	"<This block of commented-out lines of code should be removed.(‡Á—â
+<squid:UndocumentedApi"Document this public field.( þÍ¾
+€"squid:ClassVariableVisibilityCheck"MMake v a static final constant or non-public and provide accessors if needed.(Þ†¡«øÿÿÿÿ
+Asquid:UndocumentedApi"Document this public field.(Þ†¡«øÿÿÿÿ
+P
+squid:S106&";Replace this usage of System.out or System.err by a logger.(·£Ã
+=squid:UndocumentedApi"Document this public method.(Çµí‘
+~"squid:ClassVariableVisibilityCheck"PMake name a static final constant or non-public and provide accessors if needed.( þÍ¾
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(àªÅö
+Asquid:UndocumentedApi"Document this public field.(ìµ§úÿÿÿÿ
+€"squid:ClassVariableVisibilityCheck"MMake c a static final constant or non-public and provide accessors if needed.(ìµ§úÿÿÿÿ
